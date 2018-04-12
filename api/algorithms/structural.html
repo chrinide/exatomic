@@ -1,0 +1,605 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Structural Analysis &mdash; exatomic 0.3.11 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Molecular and System Builders" href="builders.html" />
+    <link rel="prev" title="Common Orbital Integrals" href="integrals.html" /> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> exatomic
+          
+
+          
+            
+            <img src="../../_static/logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.3.11
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install.html#anaconda">Anaconda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install.html#pypi">Pypi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install.html#repository">Repository</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install.html#what-s-next">What’s Next?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install.html#note">Note</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../started.html">Getting Started</a></li>
+</ul>
+<p class="caption"><span class="caption-text">General</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">User Docs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../index.html#supported-software">Supported Software</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#version-information">Version Information</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../universe.html">Universe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../editor.html">Editors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../widgets.html">Visualization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../interfaces.html">External Interfaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../atom.html">Description of Nuclear Coordinates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../two.html">Atom Two</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../orbital.html">Orbitals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../basis.html">Description of Basis Sets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tensor.html">Tensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../frame.html">Frame</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../molecule.html">Molecules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../field.html">Scalar Fields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../matrices.html">Matrices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basis.html">Basis Algorithms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orbital.html">Orbital Algorithms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="integrals.html">Common Orbital Integrals</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Structural Analysis</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#two-body-properties-computations">Two Body Properties Computations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">Two Body Properties Computations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pair-correlation-functions">Pair Correlation Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#computation-of-displacement">Computation of Displacement</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#diffusion-coefficients">Diffusion Coefficients</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="builders.html">Molecular and System Builders</a></li>
+<li class="toctree-l2"><a class="reference internal" href="delocalization.html">Exchange-Correlation Delocalization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interpolation.html">Interpolation Helpers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="neighbors.html">Clustering Algorithms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../error.html">Core Exceptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="indexing.html">Indexing Algorithms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tests/base_tests.html">Base Tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tests/core_tests.html">Core Tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tests/algorithms_tests.html">Algorithms Tests</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Examples</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../notebooks/water-demo.html">Import</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../notebooks/water-demo.html#Parse-Test-Data">Parse Test Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../notebooks/water-demo.html#Construct-a-Periodic-Universe-(by-hand)">Construct a Periodic Universe (by hand)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../notebooks/water-demo.html#Compute-Distances-Between-Atoms">Compute Distances Between Atoms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../notebooks/water-demo.html#Visualize-Trajectory-(press-play-multiple-times-to-speed-up-framerate)">Visualize Trajectory (press play multiple times to speed up framerate)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../notebooks/nwchem.html">NWChem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../notebooks/qe.html">Support for Quantum ESPRESSO in exatomic</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Software</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../software/adf.html">ADF</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../software/gaussian.html">Gaussian</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../software/molcas.html">Molcas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../software/nbo.html">NBO</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../software/nwchem.html">NWChem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../software/qe.html">Quantum ESPRESSO</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contributors</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../contrib.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../concepts.html">Development</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">exatomic</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">User Docs</a> &raquo;</li>
+        
+      <li>Structural Analysis</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/api/algorithms/structural.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast,
+.nboutput.nblast {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast + .nbinput {
+    margin-top: -19px;
+}
+
+/* nice headers on first paragraph of info/warning boxes */
+.admonition .first {
+    margin: -12px;
+    padding: 6px 12px;
+    margin-bottom: 12px;
+    color: #fff;
+    line-height: 1;
+    display: block;
+}
+.admonition.warning .first {
+    background: #f0b37e;
+}
+.admonition.note .first {
+    background: #6ab0de;
+}
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+</style>
+<div class="section" id="module-exatomic.algorithms.angles">
+<span id="structural-analysis"></span><h1>Structural Analysis<a class="headerlink" href="#module-exatomic.algorithms.angles" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="two-body-properties-computations">
+<h2>Two Body Properties Computations<a class="headerlink" href="#two-body-properties-computations" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="exatomic.algorithms.angles.compute_angles_out_of_core">
+<code class="descclassname">exatomic.algorithms.angles.</code><code class="descname">compute_angles_out_of_core</code><span class="sig-paren">(</span><em>hdfname</em>, <em>uni</em>, <em>bond=True</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/exatomic/algorithms/angles.html#compute_angles_out_of_core"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#exatomic.algorithms.angles.compute_angles_out_of_core" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given an HDF of atom two body properties, compute angles.</p>
+<p>Atomic two body data is expected to have been computed (see
+<a class="reference internal" href="../two.html#exatomic.core.two.compute_atom_two_out_of_core" title="exatomic.core.two.compute_atom_two_out_of_core"><code class="xref py py-func docutils literal notranslate"><span class="pre">compute_atom_two_out_of_core()</span></code></a>)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>hdfname</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><em>str</em></a>) – Path to HDF file containing two body data</li>
+<li><strong>uni</strong> (<a class="reference internal" href="../universe.html#exatomic.core.universe.Universe" title="exatomic.core.universe.Universe"><code class="xref py py-class docutils literal notranslate"><span class="pre">Universe</span></code></a>) – Universe</li>
+<li><strong>bond</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.6)"><em>bool</em></a>) – Restrict to bond angles (default True)</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">If bond is set to False, this process may take a very long time.</p>
+</div>
+</dd></dl>
+
+</div>
+<span class="target" id="module-exatomic.algorithms.distance"></span><div class="section" id="id1">
+<h2>Two Body Properties Computations<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<dl class="attribute">
+<dt id="exatomic.algorithms.distance.pdist_ortho">
+<code class="descclassname">exatomic.algorithms.distance.</code><code class="descname">pdist_ortho</code><a class="reference internal" href="../../_modules/exatomic/algorithms/distance.html#pdist_ortho"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#exatomic.algorithms.distance.pdist_ortho" title="Permalink to this definition">¶</a></dt>
+<dd><p>Pairwise two body calculation for bodies in an orthorhombic periodic cell.</p>
+<p>Does return distance vectors.</p>
+<p>An orthorhombic cell is defined by orthogonal vectors of length a and b
+(which define the base) and height vector of length c. All three vectors
+intersect at 90° angles. If a = b = c the cell is a simple cubic cell.
+This function assumes the unit cell is constant with respect to an external
+frame of reference and that the origin of the cell is at (0, 0, 0).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>ux</strong> (<em>array</em>) – In unit cell x array</li>
+<li><strong>uy</strong> (<em>array</em>) – In unit cell y array</li>
+<li><strong>uz</strong> (<em>array</em>) – In unit cell z array</li>
+<li><strong>a</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.6)"><em>float</em></a>) – Unit cell dimension a</li>
+<li><strong>b</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.6)"><em>float</em></a>) – Unit cell dimension b</li>
+<li><strong>c</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.6)"><em>float</em></a>) – Unit cell dimension c index (array): Atom indexes</li>
+<li><strong>dmax</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.6)"><em>float</em></a>) – Maximum distance of interest</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="exatomic.algorithms.distance.pdist_ortho_nv">
+<code class="descclassname">exatomic.algorithms.distance.</code><code class="descname">pdist_ortho_nv</code><a class="reference internal" href="../../_modules/exatomic/algorithms/distance.html#pdist_ortho_nv"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#exatomic.algorithms.distance.pdist_ortho_nv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Pairwise two body calculation for bodies in an orthorhombic periodic cell.</p>
+<p>Does not return distance vectors.</p>
+<p>An orthorhombic cell is defined by orthogonal vectors of length a and b
+(which define the base) and height vector of length c. All three vectors
+intersect at 90° angles. If a = b = c the cell is a simple cubic cell.
+This function assumes the unit cell is constant with respect to an external
+frame of reference and that the origin of the cell is at (0, 0, 0).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>ux</strong> (<em>array</em>) – In unit cell x array</li>
+<li><strong>uy</strong> (<em>array</em>) – In unit cell y array</li>
+<li><strong>uz</strong> (<em>array</em>) – In unit cell z array</li>
+<li><strong>a</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.6)"><em>float</em></a>) – Unit cell dimension a</li>
+<li><strong>b</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.6)"><em>float</em></a>) – Unit cell dimension b</li>
+<li><strong>c</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.6)"><em>float</em></a>) – Unit cell dimension c index (array): Atom indexes</li>
+<li><strong>dmax</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.6)"><em>float</em></a>) – Maximum distance of interest</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="exatomic.algorithms.distance.pdist">
+<code class="descclassname">exatomic.algorithms.distance.</code><code class="descname">pdist</code><a class="reference internal" href="../../_modules/exatomic/algorithms/distance.html#pdist"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#exatomic.algorithms.distance.pdist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Pairwise distance computation for points in cartesian space.</p>
+<p>Does return distance vectors.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="exatomic.algorithms.distance.pdist_nv">
+<code class="descclassname">exatomic.algorithms.distance.</code><code class="descname">pdist_nv</code><a class="reference internal" href="../../_modules/exatomic/algorithms/distance.html#pdist_nv"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#exatomic.algorithms.distance.pdist_nv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Pairwise distance computation for points in cartesian space.</p>
+<p>Does not return distance vectors.</p>
+</dd></dl>
+
+</div>
+<span class="target" id="module-exatomic.algorithms.pcf"></span><div class="section" id="pair-correlation-functions">
+<h2>Pair Correlation Functions<a class="headerlink" href="#pair-correlation-functions" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="exatomic.algorithms.pcf.radial_pair_correlation">
+<code class="descclassname">exatomic.algorithms.pcf.</code><code class="descname">radial_pair_correlation</code><span class="sig-paren">(</span><em>universe</em>, <em>a</em>, <em>b</em>, <em>dr=0.05</em>, <em>start=1.0</em>, <em>stop=13.0</em>, <em>length='Angstrom'</em>, <em>window=1</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/exatomic/algorithms/pcf.html#radial_pair_correlation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#exatomic.algorithms.pcf.radial_pair_correlation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the angularly independent pair correlation function.</p>
+<p>This function is sometimes called the pair radial distribution function. The
+quality of the result depends strongly on the amount of two body distances
+computed (see <code class="xref py py-func docutils literal notranslate"><span class="pre">compute_two_body()</span></code>) in the case of a
+periodic unvierse. Furthermore, the result can be skewed if only a single
+atom a (or b) exists in each frame. In these situations one can use the
+<strong>window</strong> and <strong>dr</strong> parameter to adjust the result accordingly. Reasonable
+values for <strong>dr</strong> range from 0.1 to 0.01 and reasonable values for <strong>window</strong>
+range from 1 to 5 (default is 1 - no smoothing).</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">pcf</span> <span class="o">=</span> <span class="n">radial_pair_correlation</span><span class="p">(</span><span class="n">universe</span><span class="p">,</span> <span class="s2">&quot;O&quot;</span><span class="p">,</span> <span class="s2">&quot;O&quot;</span><span class="p">)</span>
+<span class="n">pcf</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">secondary_y</span><span class="o">=</span><span class="s2">&quot;Pair Count&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="math notranslate">
+\[ \begin{align}\begin{aligned}g_{AB}\left(r\right) = \frac{V}{4\pi r^{2}\Delta r MN_{A}N_{B}}
+\sum_{m=1}^{M}\sum_{a=1}^{N_{A}}\sum_{b=1}^{N_{B}}Q_{m}
+\left(r_{a}, r_{b}; r, \Delta r\right)\\\begin{split}Q_{m}\left(r_{a}, r_{b}; r, \Delta r\right) = \begin{cases} \
+    &amp;1\ \ if\ r - \frac{\Delta r}{2} \le \left|r_{a} - r_{b}\right|\lt r + \frac{\Delta r}{2} \\
+    &amp;0\ \ otherwise \\
+\end{cases}\end{split}\end{aligned}\end{align} \]</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>universe</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Universe</span></code>) – The universe (with two body data)</li>
+<li><strong>a</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><em>str</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.6)"><em>list</em></a><em>, </em><em>array</em>) – First atom type (see Note)</li>
+<li><strong>b</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><em>str</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.6)"><em>list</em></a><em>, </em><em>array</em>) – Second atom type (see Note)</li>
+<li><strong>dr</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.6)"><em>float</em></a>) – Radial step size</li>
+<li><strong>start</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.6)"><em>float</em></a>) – Starting radial point</li>
+<li><strong>stop</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.6)"><em>float</em></a>) – Stopping radial point</li>
+<li><strong>length</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><em>str</em></a>) – Output unit of length</li>
+<li><strong>window</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.6)"><em>int</em></a>) – Smoothen data (useful when only a single a or b exist, default no smoothing)</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">pcf (<a class="reference external" href="http://pandas-docs.github.io/pandas-docs-travis/generated/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v0.23.0.dev0+739.g2794474.dirty)"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrame</span></code></a>) – Pair correlation distribution and count</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If a, b are strings pairs are determined using atomic symbols. If integers
+or lists/tuples are passed pairs are determined by atomic labels (see
+<a class="reference internal" href="../atom.html#exatomic.core.atom.Atom.get_atom_labels" title="exatomic.core.atom.Atom.get_atom_labels"><code class="xref py py-func docutils literal notranslate"><span class="pre">get_atom_labels()</span></code></a>). Arrays are assumed to
+be index values directly.</p>
+</div>
+<dl class="docutils">
+<dt>Tip:</dt>
+<dd>Depending on the type of two body computation (or data) used, the volume
+may not be the cell volume; the normalization factor (the prefactor) is
+the volume sampled during computation of two body properties divided by
+the number of properties used in the histogram (the triple summation
+above, divided by the normalization for the radial distance outward).</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="exatomic.algorithms.pcf.radial_pcf_out_of_core">
+<code class="descclassname">exatomic.algorithms.pcf.</code><code class="descname">radial_pcf_out_of_core</code><span class="sig-paren">(</span><em>hdftwo</em>, <em>hdfout</em>, <em>u</em>, <em>pairs</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/exatomic/algorithms/pcf.html#radial_pcf_out_of_core"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#exatomic.algorithms.pcf.radial_pcf_out_of_core" title="Permalink to this definition">¶</a></dt>
+<dd><p>Out of core radial pair correlation calculation.</p>
+<p>Atomic two body data is expected to have been computed (see
+<a class="reference internal" href="../two.html#exatomic.core.two.compute_atom_two_out_of_core" title="exatomic.core.two.compute_atom_two_out_of_core"><code class="xref py py-func docutils literal notranslate"><span class="pre">compute_atom_two_out_of_core()</span></code></a>)
+An example is given below. Note the importance of the definition
+of pairs and the presence of additional arguments.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">radial_pcf_out_of_core</span><span class="p">(</span><span class="s2">&quot;in.hdf&quot;</span><span class="p">,</span> <span class="s2">&quot;out.hdf&quot;</span><span class="p">,</span> <span class="n">uni</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;O_H&quot;</span><span class="p">:</span> <span class="p">([</span><span class="mi">0</span><span class="p">],</span> <span class="s2">&quot;H&quot;</span><span class="p">)},</span>
+                       <span class="n">length</span><span class="o">=</span><span class="s2">&quot;Angstrom&quot;</span><span class="p">,</span> <span class="n">dr</span><span class="o">=</span><span class="mf">0.01</span><span class="p">)</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>hdftwo</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><em>str</em></a>) – HDF filepath containing atomic two body data</li>
+<li><strong>hdfout</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><em>str</em></a>) – HDF filepath to which radial PCF data will be written (see Note)</li>
+<li><strong>u</strong> (<a class="reference internal" href="../universe.html#exatomic.core.universe.Universe" title="exatomic.core.universe.Universe"><code class="xref py py-class docutils literal notranslate"><span class="pre">Universe</span></code></a>) – Universe</li>
+<li><strong>pairs</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.6)"><em>dict</em></a>) – Dictionary of string name keys, values of <code class="docutils literal notranslate"><span class="pre">a</span></code>, <code class="docutils literal notranslate"><span class="pre">b</span></code> arguments (see Note)</li>
+<li><strong>kwargs</strong> – Additional keyword arguments to be passed (see Note)</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Results will be stored in the hdfout HDF file. Keys are of the form
+<code class="docutils literal notranslate"><span class="pre">radial_pcf_key</span></code>. The keys of <code class="docutils literal notranslate"><span class="pre">pairs</span></code> are used to store the output
+while the values are used to perform the pair correlation itself.</p>
+</div>
+</dd></dl>
+
+</div>
+<span class="target" id="module-exatomic.algorithms.displacement"></span><div class="section" id="computation-of-displacement">
+<h2>Computation of Displacement<a class="headerlink" href="#computation-of-displacement" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="exatomic.algorithms.displacement.absolute_squared_displacement">
+<code class="descclassname">exatomic.algorithms.displacement.</code><code class="descname">absolute_squared_displacement</code><span class="sig-paren">(</span><em>universe</em>, <em>ref_frame=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/exatomic/algorithms/displacement.html#absolute_squared_displacement"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#exatomic.algorithms.displacement.absolute_squared_displacement" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the mean squared displacement per atom per time with respect to the
+referenced position.</p>
+<p>Computes the squared displacement using the <code class="xref py py-class docutils literal notranslate"><span class="pre">Atom</span></code>
+dataframe. In the case where this dataframe only contains the in unit cell
+coordinates, this may not give desired results.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>universe</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Universe</span></code>) – The universe containing atomic positions</li>
+<li><strong>ref_frame</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.6)"><em>int</em></a>) – Which frame to use as the reference (default first frame)</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt>Returns</dt>
+<dd>df (<a class="reference external" href="http://pandas-docs.github.io/pandas-docs-travis/generated/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v0.23.0.dev0+739.g2794474.dirty)"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrame</span></code></a>): Time dependent displacement per atom</dd>
+</dl>
+</dd></dl>
+
+</div>
+<span class="target" id="module-exatomic.algorithms.diffusion"></span><div class="section" id="diffusion-coefficients">
+<h2>Diffusion Coefficients<a class="headerlink" href="#diffusion-coefficients" title="Permalink to this headline">¶</a></h2>
+<p>Various algorithms for computing diffusion coefficients are coded here.</p>
+<dl class="function">
+<dt id="exatomic.algorithms.diffusion.einstein_relation">
+<code class="descclassname">exatomic.algorithms.diffusion.</code><code class="descname">einstein_relation</code><span class="sig-paren">(</span><em>universe</em>, <em>input_time='ps'</em>, <em>input_length='au'</em>, <em>length='cm'</em>, <em>time='s'</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/exatomic/algorithms/diffusion.html#einstein_relation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#exatomic.algorithms.diffusion.einstein_relation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the (time dependent) diffusion coefficient using Einstein’s relation.</p>
+<div class="math notranslate">
+\[ \begin{align}\begin{aligned}D\left(t\right) = \frac{1}{6Nt}\sum_{i=1}^{N}\left|\mathbf{r}_{i}\left(t\right)
+    - \mathbf{r}_{i}\left(0\right)\right|^{2}\\D = \lim_{t\to\infty} D\left(t\right)\end{aligned}\end{align} \]</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>universe</strong> (<a class="reference internal" href="../universe.html#exatomic.core.universe.Universe" title="exatomic.core.universe.Universe"><code class="xref py py-class docutils literal notranslate"><span class="pre">Universe</span></code></a>) – The universe object</li>
+<li><strong>input_time</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><em>str</em></a>) – String unit of ‘time’ column in frame table</li>
+<li><strong>input_length</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><em>str</em></a>) – String unit of xyz coordinates</li>
+<li><strong>length</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><em>str</em></a>) – String unit name of output length unit</li>
+<li><strong>time</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><em>str</em></a>) – Sting unit name of output time unit</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">d (<code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrame</span></code>) – Diffussion coefficient as a function of time</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The asymptotic value of the returned variable is the diffusion coefficient.
+The default units of the diffusion coefficient are <span class="math notranslate">\(\frac{cm^{2}}{s}\)</span>.</p>
+</div>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="builders.html" class="btn btn-neutral float-right" title="Molecular and System Builders" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="integrals.html" class="btn btn-neutral" title="Common Orbital Integrals" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright .
+      Last updated on Apr 12, 2018.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'0.3.11',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          
+          SphinxRtdTheme.Navigation.enableSticky();
+          
+      });
+  </script> 
+
+</body>
+</html>

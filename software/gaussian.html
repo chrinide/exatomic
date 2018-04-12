@@ -1,0 +1,544 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Gaussian &mdash; exatomic 0.3.11 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Molcas" href="molcas.html" />
+    <link rel="prev" title="ADF" href="adf.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> exatomic
+          
+
+          
+            
+            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.3.11
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install.html#anaconda">Anaconda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install.html#pypi">Pypi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install.html#repository">Repository</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install.html#what-s-next">What’s Next?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install.html#note">Note</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../started.html">Getting Started</a></li>
+</ul>
+<p class="caption"><span class="caption-text">General</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../api/index.html">User Docs</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Examples</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/water-demo.html">Import</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/water-demo.html#Parse-Test-Data">Parse Test Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/water-demo.html#Construct-a-Periodic-Universe-(by-hand)">Construct a Periodic Universe (by hand)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/water-demo.html#Compute-Distances-Between-Atoms">Compute Distances Between Atoms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/water-demo.html#Visualize-Trajectory-(press-play-multiple-times-to-speed-up-framerate)">Visualize Trajectory (press play multiple times to speed up framerate)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/nwchem.html">NWChem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/qe.html">Support for Quantum ESPRESSO in exatomic</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Software</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="adf.html">ADF</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Gaussian</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#gaussian-editor">Gaussian Editor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#gaussian-input-generator">Gaussian Input Generator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#gaussian-output-editor">Gaussian Output Editor</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="molcas.html">Molcas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nbo.html">NBO</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nwchem.html">NWChem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="qe.html">Quantum ESPRESSO</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contributors</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../contrib.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts.html">Development</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">exatomic</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Gaussian</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/software/gaussian.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast,
+.nboutput.nblast {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast + .nbinput {
+    margin-top: -19px;
+}
+
+/* nice headers on first paragraph of info/warning boxes */
+.admonition .first {
+    margin: -12px;
+    padding: 6px 12px;
+    margin-bottom: 12px;
+    color: #fff;
+    line-height: 1;
+    display: block;
+}
+.admonition.warning .first {
+    background: #f0b37e;
+}
+.admonition.note .first {
+    background: #6ab0de;
+}
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+</style>
+<div class="section" id="module-exatomic.gaussian.editor">
+<span id="gaussian"></span><span id="gaussian-label"></span><h1><a class="reference external" href="http://gaussian.com/">Gaussian</a><a class="headerlink" href="#module-exatomic.gaussian.editor" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="gaussian-editor">
+<h2>Gaussian Editor<a class="headerlink" href="#gaussian-editor" title="Permalink to this headline">¶</a></h2>
+<p>Base class on top of exatomic.Editor for Gaussian Editors</p>
+<dl class="class">
+<dt id="exatomic.gaussian.editor.Editor">
+<em class="property">class </em><code class="descclassname">exatomic.gaussian.editor.</code><code class="descname">Editor</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/exatomic/gaussian/editor.html#Editor"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#exatomic.gaussian.editor.Editor" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<span class="target" id="module-exatomic.gaussian.inputs"></span><div class="section" id="gaussian-input-generator">
+<h2>Gaussian Input Generator<a class="headerlink" href="#gaussian-input-generator" title="Permalink to this headline">¶</a></h2>
+<p>Editor class and helper function for writing input files.</p>
+<dl class="class">
+<dt id="exatomic.gaussian.inputs.Input">
+<em class="property">class </em><code class="descclassname">exatomic.gaussian.inputs.</code><code class="descname">Input</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/exatomic/gaussian/inputs.html#Input"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#exatomic.gaussian.inputs.Input" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="classmethod">
+<dt id="exatomic.gaussian.inputs.Input.from_universe">
+<em class="property">classmethod </em><code class="descname">from_universe</code><span class="sig-paren">(</span><em>uni</em>, <em>link0=''</em>, <em>route='#P HF/6-31G(d)'</em>, <em>title=''</em>, <em>name=''</em>, <em>charge=0</em>, <em>mult=1</em>, <em>basis=''</em>, <em>ecp=''</em>, <em>options=''</em>, <em>writedir=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/exatomic/gaussian/inputs.html#Input.from_universe"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#exatomic.gaussian.inputs.Input.from_universe" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate an input Editor from a universe. Arguments can either be strings
+or iterables of key, value pairs (dict, list, tuple) and/or just strings.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="exatomic.gaussian.inputs.tuning_inputs">
+<code class="descclassname">exatomic.gaussian.inputs.</code><code class="descname">tuning_inputs</code><span class="sig-paren">(</span><em>uni</em>, <em>name</em>, <em>mult</em>, <em>charge</em>, <em>basis</em>, <em>gammas</em>, <em>alphas</em>, <em>route=None</em>, <em>link0=None</em>, <em>nproc=4</em>, <em>mem=4</em>, <em>field=None</em>, <em>writedir=None</em>, <em>deep=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/exatomic/gaussian/inputs.html#tuning_inputs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#exatomic.gaussian.inputs.tuning_inputs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Provided a universe, generate input files for functional tuning.
+Includes input keywords for orbital visualization within exatomic.
+Assumes you will copy restart checkpoint files to have the same
+names as the input files.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>uni</strong> (<em>exatomic.container.Universe</em>) – molecular specification</li>
+<li><strong>name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><em>str</em></a>) – prefix for job names</li>
+<li><strong>mult</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.6)"><em>int</em></a>) – spin multiplicity</li>
+<li><strong>charge</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.6)"><em>int</em></a>) – charge of the system</li>
+<li><strong>basis</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.6)"><em>list</em></a>) – tuples of atomic symbol, string of basis name</li>
+<li><strong>gammas</strong> (<em>iter</em>) – values of range separation parameter (omega)</li>
+<li><strong>alphas</strong> (<em>iter</em>) – fractions of Hartree-Fock in the short range</li>
+<li><strong>route</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.6)"><em>list</em></a>) – strings or tuples of keyword, value pairs</li>
+<li><strong>link0</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.6)"><em>list</em></a>) – strings or tuples of keyword, value pairs</li>
+<li><strong>nproc</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.6)"><em>int</em></a>) – number of processors</li>
+<li><strong>mem</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.6)"><em>int</em></a>) – memory (in GB)</li>
+<li><strong>writedir</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><em>str</em></a>) – directory path to write input files</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><em>editors (list)</em> – input files as exa.Editors</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="exatomic.gaussian.inputs.functional_inputs">
+<code class="descclassname">exatomic.gaussian.inputs.</code><code class="descname">functional_inputs</code><span class="sig-paren">(</span><em>uni</em>, <em>name</em>, <em>mult</em>, <em>charge</em>, <em>basis</em>, <em>funcnames={'pbe': 'PBEPBE'}</em>, <em>nproc=4</em>, <em>mem=4</em>, <em>field=None</em>, <em>writedir=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/exatomic/gaussian/inputs.html#functional_inputs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#exatomic.gaussian.inputs.functional_inputs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Provided a universe, generate input files to analyze the
+delocalization error inherent in functionals defined in funcnames.
+Includes input keywords for orbital visualization within exatomic.
+Assumes you will copy restart checkpoint files to have the same
+names as the input files.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>uni</strong> (<em>exatomic.container.Universe</em>) – molecular specification</li>
+<li><strong>name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><em>str</em></a>) – prefix for job names</li>
+<li><strong>mult</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.6)"><em>int</em></a>) – spin multiplicity</li>
+<li><strong>charge</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.6)"><em>int</em></a>) – charge of the system</li>
+<li><strong>basis</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.6)"><em>list</em></a>) – tuples of atomic symbol, string of basis name</li>
+<li><strong>gammas</strong> (<em>iter</em>) – values of range separation parameter (omega)</li>
+<li><strong>alphas</strong> (<em>iter</em>) – fractions of Hartree-Fock in the short range</li>
+<li><strong>route</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.6)"><em>list</em></a>) – strings or tuples of keyword, value pairs</li>
+<li><strong>link0</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.6)"><em>list</em></a>) – strings or tuples of keyword, value pairs</li>
+<li><strong>nproc</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.6)"><em>int</em></a>) – number of processors</li>
+<li><strong>mem</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.6)"><em>int</em></a>) – memory (in GB)</li>
+<li><strong>writedir</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><em>str</em></a>) – directory path to write input files</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><em>editors (list)</em> – input files as exa.Editors</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<span class="target" id="module-exatomic.gaussian.output"></span><div class="section" id="gaussian-output-editor">
+<h2>Gaussian Output Editor<a class="headerlink" href="#gaussian-output-editor" title="Permalink to this headline">¶</a></h2>
+<p>Editor classes for various types of Gaussian output files</p>
+<dl class="class">
+<dt id="exatomic.gaussian.output.GauMeta">
+<em class="property">class </em><code class="descclassname">exatomic.gaussian.output.</code><code class="descname">GauMeta</code><a class="reference internal" href="../_modules/exatomic/gaussian/output.html#GauMeta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#exatomic.gaussian.output.GauMeta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="exatomic.gaussian.output.GauMeta.atom">
+<code class="descname">atom</code><a class="headerlink" href="#exatomic.gaussian.output.GauMeta.atom" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="../api/atom.html#exatomic.core.atom.Atom" title="exatomic.core.atom.Atom"><code class="xref py py-class docutils literal notranslate"><span class="pre">exatomic.core.atom.Atom</span></code></a></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="exatomic.gaussian.output.GauMeta.basis_set">
+<code class="descname">basis_set</code><a class="headerlink" href="#exatomic.gaussian.output.GauMeta.basis_set" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="../api/basis.html#exatomic.core.basis.BasisSet" title="exatomic.core.basis.BasisSet"><code class="xref py py-class docutils literal notranslate"><span class="pre">exatomic.core.basis.BasisSet</span></code></a></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="exatomic.gaussian.output.GauMeta.orbital">
+<code class="descname">orbital</code><a class="headerlink" href="#exatomic.gaussian.output.GauMeta.orbital" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="../api/orbital.html#exatomic.core.orbital.Orbital" title="exatomic.core.orbital.Orbital"><code class="xref py py-class docutils literal notranslate"><span class="pre">exatomic.core.orbital.Orbital</span></code></a></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="exatomic.gaussian.output.GauMeta.momatrix">
+<code class="descname">momatrix</code><a class="headerlink" href="#exatomic.gaussian.output.GauMeta.momatrix" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="../api/orbital.html#exatomic.core.orbital.MOMatrix" title="exatomic.core.orbital.MOMatrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">exatomic.core.orbital.MOMatrix</span></code></a></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="exatomic.gaussian.output.GauMeta.basis_set_order">
+<code class="descname">basis_set_order</code><a class="headerlink" href="#exatomic.gaussian.output.GauMeta.basis_set_order" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="../api/basis.html#exatomic.core.basis.BasisSetOrder" title="exatomic.core.basis.BasisSetOrder"><code class="xref py py-class docutils literal notranslate"><span class="pre">exatomic.core.basis.BasisSetOrder</span></code></a></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="exatomic.gaussian.output.GauMeta.frame">
+<code class="descname">frame</code><a class="headerlink" href="#exatomic.gaussian.output.GauMeta.frame" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="../api/frame.html#exatomic.core.frame.Frame" title="exatomic.core.frame.Frame"><code class="xref py py-class docutils literal notranslate"><span class="pre">exatomic.core.frame.Frame</span></code></a></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="exatomic.gaussian.output.GauMeta.excitation">
+<code class="descname">excitation</code><a class="headerlink" href="#exatomic.gaussian.output.GauMeta.excitation" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="../api/orbital.html#exatomic.core.orbital.Excitation" title="exatomic.core.orbital.Excitation"><code class="xref py py-class docutils literal notranslate"><span class="pre">exatomic.core.orbital.Excitation</span></code></a></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="exatomic.gaussian.output.GauMeta.frequency">
+<code class="descname">frequency</code><a class="headerlink" href="#exatomic.gaussian.output.GauMeta.frequency" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="../api/atom.html#exatomic.core.atom.Frequency" title="exatomic.core.atom.Frequency"><code class="xref py py-class docutils literal notranslate"><span class="pre">exatomic.core.atom.Frequency</span></code></a></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="exatomic.gaussian.output.GauMeta.overlap">
+<code class="descname">overlap</code><a class="headerlink" href="#exatomic.gaussian.output.GauMeta.overlap" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="../api/basis.html#exatomic.core.basis.Overlap" title="exatomic.core.basis.Overlap"><code class="xref py py-class docutils literal notranslate"><span class="pre">exatomic.core.basis.Overlap</span></code></a></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="exatomic.gaussian.output.Output">
+<em class="property">class </em><code class="descclassname">exatomic.gaussian.output.</code><code class="descname">Output</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/exatomic/gaussian/output.html#Output"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#exatomic.gaussian.output.Output" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="exatomic.gaussian.output.Output.parse_momatrix">
+<code class="descname">parse_momatrix</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/exatomic/gaussian/output.html#Output.parse_momatrix"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#exatomic.gaussian.output.Output.parse_momatrix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parses the MO matrix if asked for in the input.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Requires specification of pop(full) or pop(no) or the like.</p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="exatomic.gaussian.output.Output.parse_frame">
+<code class="descname">parse_frame</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/exatomic/gaussian/output.html#Output.parse_frame"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#exatomic.gaussian.output.Output.parse_frame" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a minimal <code class="xref py py-class docutils literal notranslate"><span class="pre">Frame</span></code> from the (parsed)
+<a class="reference internal" href="../api/atom.html#exatomic.core.atom.Atom" title="exatomic.core.atom.Atom"><code class="xref py py-class docutils literal notranslate"><span class="pre">Atom</span></code></a> object.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="exatomic.gaussian.output.Fchk">
+<em class="property">class </em><code class="descclassname">exatomic.gaussian.output.</code><code class="descname">Fchk</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/exatomic/gaussian/output.html#Fchk"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#exatomic.gaussian.output.Fchk" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<span class="target" id="module-exatomic.gaussian.tests.test_editor"></span><dl class="class">
+<dt id="exatomic.gaussian.tests.test_editor.TestEditor">
+<em class="property">class </em><code class="descclassname">exatomic.gaussian.tests.test_editor.</code><code class="descname">TestEditor</code><span class="sig-paren">(</span><em>methodName='runTest'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/exatomic/gaussian/tests/test_editor.html#TestEditor"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#exatomic.gaussian.tests.test_editor.TestEditor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tests that metadata is set appropriately for Gaussian editors.</p>
+<dl class="method">
+<dt id="exatomic.gaussian.tests.test_editor.TestEditor.test_no_meta">
+<code class="descname">test_no_meta</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/exatomic/gaussian/tests/test_editor.html#TestEditor.test_no_meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#exatomic.gaussian.tests.test_editor.TestEditor.test_no_meta" title="Permalink to this definition">¶</a></dt>
+<dd><p>Test that program metadata is set by default.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="exatomic.gaussian.tests.test_editor.TestEditor.test_with_meta">
+<code class="descname">test_with_meta</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/exatomic/gaussian/tests/test_editor.html#TestEditor.test_with_meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#exatomic.gaussian.tests.test_editor.TestEditor.test_with_meta" title="Permalink to this definition">¶</a></dt>
+<dd><p>Test that passed metadata is respected and program is set.</p>
+</dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-exatomic.gaussian.tests.test_inputs"></span><span class="target" id="module-exatomic.gaussian.tests.test_output"></span><dl class="class">
+<dt id="exatomic.gaussian.tests.test_output.TestFchk">
+<em class="property">class </em><code class="descclassname">exatomic.gaussian.tests.test_output.</code><code class="descname">TestFchk</code><span class="sig-paren">(</span><em>methodName='runTest'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/exatomic/gaussian/tests/test_output.html#TestFchk"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#exatomic.gaussian.tests.test_output.TestFchk" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="exatomic.gaussian.tests.test_output.TestFchk.setUp">
+<code class="descname">setUp</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/exatomic/gaussian/tests/test_output.html#TestFchk.setUp"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#exatomic.gaussian.tests.test_output.TestFchk.setUp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Hook method for setting up the test fixture before exercising it.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="exatomic.gaussian.tests.test_output.TestFchk.test_to_universe">
+<code class="descname">test_to_universe</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/exatomic/gaussian/tests/test_output.html#TestFchk.test_to_universe"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#exatomic.gaussian.tests.test_output.TestFchk.test_to_universe" title="Permalink to this definition">¶</a></dt>
+<dd><p>Test the to_universe method.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="exatomic.gaussian.tests.test_output.TestOutput">
+<em class="property">class </em><code class="descclassname">exatomic.gaussian.tests.test_output.</code><code class="descname">TestOutput</code><span class="sig-paren">(</span><em>methodName='runTest'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/exatomic/gaussian/tests/test_output.html#TestOutput"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#exatomic.gaussian.tests.test_output.TestOutput" title="Permalink to this definition">¶</a></dt>
+<dd><p>This test ensures that the parsing functionality works on
+a smattering of output files that were generated with the
+Gaussian software package. Target syntax is for Gaussian
+09.</p>
+<dl class="method">
+<dt id="exatomic.gaussian.tests.test_output.TestOutput.setUp">
+<code class="descname">setUp</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/exatomic/gaussian/tests/test_output.html#TestOutput.setUp"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#exatomic.gaussian.tests.test_output.TestOutput.setUp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Hook method for setting up the test fixture before exercising it.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="exatomic.gaussian.tests.test_output.TestOutput.test_to_universe">
+<code class="descname">test_to_universe</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/exatomic/gaussian/tests/test_output.html#TestOutput.test_to_universe"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#exatomic.gaussian.tests.test_output.TestOutput.test_to_universe" title="Permalink to this definition">¶</a></dt>
+<dd><p>Test the to_universe method.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="molcas.html" class="btn btn-neutral float-right" title="Molcas" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="adf.html" class="btn btn-neutral" title="ADF" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright .
+      Last updated on Apr 12, 2018.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.3.11',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          
+          SphinxRtdTheme.Navigation.enableSticky();
+          
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,307 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>exatomic.algorithms.tests.test_orbital &mdash; exatomic 0.3.11 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" /> 
+
+  
+  <script src="../../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> exatomic
+          
+
+          
+            
+            <img src="../../../../_static/logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.3.11
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../install.html#anaconda">Anaconda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../install.html#pypi">Pypi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../install.html#repository">Repository</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../install.html#what-s-next">What’s Next?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../install.html#note">Note</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../started.html">Getting Started</a></li>
+</ul>
+<p class="caption"><span class="caption-text">General</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../api/index.html">User Docs</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Examples</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../notebooks/water-demo.html">Import</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../notebooks/water-demo.html#Parse-Test-Data">Parse Test Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../notebooks/water-demo.html#Construct-a-Periodic-Universe-(by-hand)">Construct a Periodic Universe (by hand)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../notebooks/water-demo.html#Compute-Distances-Between-Atoms">Compute Distances Between Atoms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../notebooks/water-demo.html#Visualize-Trajectory-(press-play-multiple-times-to-speed-up-framerate)">Visualize Trajectory (press play multiple times to speed up framerate)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../notebooks/nwchem.html">NWChem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../notebooks/qe.html">Support for Quantum ESPRESSO in exatomic</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Software</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../software/adf.html">ADF</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../software/gaussian.html">Gaussian</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../software/molcas.html">Molcas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../software/nbo.html">NBO</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../software/nwchem.html">NWChem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../software/qe.html">Quantum ESPRESSO</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contributors</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../contrib.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../concepts.html">Development</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">exatomic</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../../index.html">Module code</a> &raquo;</li>
+        
+      <li>exatomic.algorithms.tests.test_orbital</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for exatomic.algorithms.tests.test_orbital</h1><div class="highlight"><pre>
+<span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="c1"># Copyright (c) 2015-2018, Exa Analytics Development Team</span>
+<span class="c1"># Distributed under the terms of the Apache License 2.0</span>
+<span class="sd">&quot;&quot;&quot;Tests for computing orbitals, densities and orbital angular momenta.&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">unittest</span> <span class="k">import</span> <span class="n">TestCase</span>
+<span class="kn">from</span> <span class="nn">exatomic</span> <span class="k">import</span> <span class="n">Universe</span><span class="p">,</span> <span class="n">nwchem</span><span class="p">,</span> <span class="n">molcas</span>
+<span class="kn">from</span> <span class="nn">exatomic.base</span> <span class="k">import</span> <span class="n">resource</span>
+<span class="kn">from</span> <span class="nn">exatomic.algorithms.orbital_util</span> <span class="k">import</span> <span class="n">compare_fields</span>
+<span class="kn">from</span> <span class="nn">exatomic.algorithms.orbital</span> <span class="k">import</span> <span class="p">(</span><span class="n">add_molecular_orbitals</span><span class="p">,</span>
+                                         <span class="n">add_orb_ang_mom</span><span class="p">,</span>
+                                         <span class="n">add_density</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="TestMolcasOrbital"><a class="viewcode-back" href="../../../../api/tests/algorithms_tests.html#exatomic.algorithms.tests.test_orbital.TestMolcasOrbital">[docs]</a><span class="k">class</span> <span class="nc">TestMolcasOrbital</span><span class="p">(</span><span class="n">TestCase</span><span class="p">):</span>
+
+<div class="viewcode-block" id="TestMolcasOrbital.setUp"><a class="viewcode-back" href="../../../../api/tests/algorithms_tests.html#exatomic.algorithms.tests.test_orbital.TestMolcasOrbital.setUp">[docs]</a>    <span class="k">def</span> <span class="nf">setUp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">chk</span> <span class="o">=</span> <span class="n">Universe</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">resource</span><span class="p">(</span><span class="s1">&#39;mol-carbon-dz-valid.hdf5&#39;</span><span class="p">))</span>
+        <span class="n">kws</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;field_params&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">chk</span><span class="o">.</span><span class="n">field</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s1">&#39;verbose&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">}</span>
+        <span class="n">uni</span> <span class="o">=</span> <span class="n">Universe</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">resource</span><span class="p">(</span><span class="s1">&#39;mol-carbon-dz.hdf5&#39;</span><span class="p">))</span>
+        <span class="n">add_molecular_orbitals</span><span class="p">(</span><span class="n">uni</span><span class="p">,</span> <span class="n">vector</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">),</span> <span class="o">**</span><span class="n">kws</span><span class="p">)</span>
+        <span class="n">add_density</span><span class="p">(</span><span class="n">uni</span><span class="p">,</span> <span class="n">mocoefs</span><span class="o">=</span><span class="s1">&#39;coef&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">kws</span><span class="p">)</span>
+        <span class="n">add_orb_ang_mom</span><span class="p">(</span><span class="n">uni</span><span class="p">,</span> <span class="n">rcoefs</span><span class="o">=</span><span class="s1">&#39;lreal&#39;</span><span class="p">,</span> <span class="n">icoefs</span><span class="o">=</span><span class="s1">&#39;limag&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">kws</span><span class="p">)</span>
+        <span class="n">add_density</span><span class="p">(</span><span class="n">uni</span><span class="p">,</span> <span class="n">mocoefs</span><span class="o">=</span><span class="s1">&#39;sx&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">kws</span><span class="p">)</span>
+        <span class="n">add_density</span><span class="p">(</span><span class="n">uni</span><span class="p">,</span> <span class="n">mocoefs</span><span class="o">=</span><span class="s1">&#39;sy&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">kws</span><span class="p">)</span>
+        <span class="n">add_density</span><span class="p">(</span><span class="n">uni</span><span class="p">,</span> <span class="n">mocoefs</span><span class="o">=</span><span class="s1">&#39;sz&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">kws</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">uni</span> <span class="o">=</span> <span class="n">uni</span></div>
+
+
+    <span class="k">def</span> <span class="nf">test_compare_fields</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="n">compare_fields</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">uni</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">chk</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertTrue</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">res</span><span class="p">),</span> <span class="nb">sum</span><span class="p">(</span><span class="n">res</span><span class="p">),</span> <span class="n">rtol</span><span class="o">=</span><span class="mf">5e-4</span><span class="p">))</span></div>
+
+
+
+<div class="viewcode-block" id="TestADFOrbital"><a class="viewcode-back" href="../../../../api/tests/algorithms_tests.html#exatomic.algorithms.tests.test_orbital.TestADFOrbital">[docs]</a><span class="k">class</span> <span class="nc">TestADFOrbital</span><span class="p">(</span><span class="n">TestCase</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">test_compare_fields</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">chk</span> <span class="o">=</span> <span class="n">Universe</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">resource</span><span class="p">(</span><span class="s1">&#39;adf-lu-valid.hdf5&#39;</span><span class="p">))</span>
+        <span class="n">uni</span> <span class="o">=</span> <span class="n">Universe</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">resource</span><span class="p">(</span><span class="s1">&#39;adf-lu.hdf5&#39;</span><span class="p">))</span>
+        <span class="n">uni</span><span class="o">.</span><span class="n">add_molecular_orbitals</span><span class="p">(</span><span class="n">vector</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">60</span><span class="p">),</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                                   <span class="n">field_params</span><span class="o">=</span><span class="n">chk</span><span class="o">.</span><span class="n">field</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="n">compare_fields</span><span class="p">(</span><span class="n">chk</span><span class="p">,</span> <span class="n">uni</span><span class="p">,</span> <span class="n">signed</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertTrue</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">res</span><span class="p">),</span> <span class="nb">sum</span><span class="p">(</span><span class="n">res</span><span class="p">),</span> <span class="n">rtol</span><span class="o">=</span><span class="mf">5e-4</span><span class="p">))</span></div>
+
+
+<div class="viewcode-block" id="TestNWChemOrbital"><a class="viewcode-back" href="../../../../api/tests/algorithms_tests.html#exatomic.algorithms.tests.test_orbital.TestNWChemOrbital">[docs]</a><span class="k">class</span> <span class="nc">TestNWChemOrbital</span><span class="p">(</span><span class="n">TestCase</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">test_compare_fields</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">nw</span> <span class="o">=</span> <span class="n">nwchem</span><span class="o">.</span><span class="n">Output</span><span class="p">(</span><span class="n">resource</span><span class="p">(</span><span class="s1">&#39;nw-ch3nh2-631g.out&#39;</span><span class="p">))</span><span class="o">.</span><span class="n">to_universe</span><span class="p">()</span>
+        <span class="n">mo</span> <span class="o">=</span> <span class="n">molcas</span><span class="o">.</span><span class="n">Output</span><span class="p">(</span><span class="n">resource</span><span class="p">(</span><span class="s1">&#39;mol-ch3nh2-631g.out&#39;</span><span class="p">))</span>
+        <span class="n">mo</span><span class="o">.</span><span class="n">add_orb</span><span class="p">(</span><span class="n">resource</span><span class="p">(</span><span class="s1">&#39;mol-ch3nh2-631g.scforb&#39;</span><span class="p">))</span>
+        <span class="n">mo</span> <span class="o">=</span> <span class="n">mo</span><span class="o">.</span><span class="n">to_universe</span><span class="p">()</span>
+        <span class="n">nw</span><span class="o">.</span><span class="n">add_molecular_orbitals</span><span class="p">(</span><span class="n">vector</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="n">mo</span><span class="o">.</span><span class="n">add_molecular_orbitals</span><span class="p">(</span><span class="n">vector</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="n">compare_fields</span><span class="p">(</span><span class="n">nw</span><span class="p">,</span> <span class="n">mo</span><span class="p">,</span> <span class="n">signed</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">rtol</span><span class="o">=</span><span class="mf">5e-3</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertTrue</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="n">res</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">res</span><span class="p">),</span> <span class="n">rtol</span><span class="o">=</span><span class="mf">5e-3</span><span class="p">))</span></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright .
+      Last updated on Apr 12, 2018.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../',
+            VERSION:'0.3.11',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          
+          SphinxRtdTheme.Navigation.enableSticky();
+          
+      });
+  </script> 
+
+</body>
+</html>

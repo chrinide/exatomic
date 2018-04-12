@@ -1,0 +1,502 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>User Docs &mdash; exatomic 0.3.11 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Universe" href="universe.html" />
+    <link rel="prev" title="Visualize Orbitals" href="../notebooks/03_orbitals.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> exatomic
+          
+
+          
+            
+            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.3.11
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install.html#anaconda">Anaconda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install.html#pypi">Pypi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install.html#repository">Repository</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install.html#what-s-next">What’s Next?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install.html#note">Note</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../started.html">Getting Started</a></li>
+</ul>
+<p class="caption"><span class="caption-text">General</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">User Docs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#supported-software">Supported Software</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#version-information">Version Information</a></li>
+<li class="toctree-l2"><a class="reference internal" href="universe.html">Universe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="editor.html">Editors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="widgets.html">Visualization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interfaces.html">External Interfaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="atom.html">Description of Nuclear Coordinates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="two.html">Atom Two</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orbital.html">Orbitals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basis.html">Description of Basis Sets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tensor.html">Tensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="frame.html">Frame</a></li>
+<li class="toctree-l2"><a class="reference internal" href="molecule.html">Molecules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="field.html">Scalar Fields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="matrices.html">Matrices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="algorithms/basis.html">Basis Algorithms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="algorithms/orbital.html">Orbital Algorithms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="algorithms/integrals.html">Common Orbital Integrals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="algorithms/structural.html">Structural Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="algorithms/builders.html">Molecular and System Builders</a></li>
+<li class="toctree-l2"><a class="reference internal" href="algorithms/delocalization.html">Exchange-Correlation Delocalization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="algorithms/interpolation.html">Interpolation Helpers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="algorithms/neighbors.html">Clustering Algorithms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="error.html">Core Exceptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="algorithms/indexing.html">Indexing Algorithms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tests/base_tests.html">Base Tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tests/core_tests.html">Core Tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tests/algorithms_tests.html">Algorithms Tests</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Examples</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/water-demo.html">Import</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/water-demo.html#Parse-Test-Data">Parse Test Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/water-demo.html#Construct-a-Periodic-Universe-(by-hand)">Construct a Periodic Universe (by hand)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/water-demo.html#Compute-Distances-Between-Atoms">Compute Distances Between Atoms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/water-demo.html#Visualize-Trajectory-(press-play-multiple-times-to-speed-up-framerate)">Visualize Trajectory (press play multiple times to speed up framerate)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/nwchem.html">NWChem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/qe.html">Support for Quantum ESPRESSO in exatomic</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Software</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../software/adf.html">ADF</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../software/gaussian.html">Gaussian</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../software/molcas.html">Molcas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../software/nbo.html">NBO</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../software/nwchem.html">NWChem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../software/qe.html">Quantum ESPRESSO</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contributors</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../contrib.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts.html">Development</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">exatomic</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>User Docs</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/api/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast,
+.nboutput.nblast {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast + .nbinput {
+    margin-top: -19px;
+}
+
+/* nice headers on first paragraph of info/warning boxes */
+.admonition .first {
+    margin: -12px;
+    padding: 6px 12px;
+    margin-bottom: 12px;
+    color: #fff;
+    line-height: 1;
+    display: block;
+}
+.admonition.warning .first {
+    background: #f0b37e;
+}
+.admonition.note .first {
+    background: #6ab0de;
+}
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+</style>
+<div class="section" id="user-docs">
+<span id="api-label"></span><h1>User Docs<a class="headerlink" href="#user-docs" title="Permalink to this headline">¶</a></h1>
+<p>The following sections describe syntax and usage of the functions and classes
+provided by the Exa package. Documentation is organized for the typical use case;
+a collection of structure text files need to be parsed into Pythonic data objects
+and then organized into a container to facilitate visualization. Useful examples
+and syntax can be found in the Examples section (Jupyte notebooks) and via help:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>help(exatomic)             # Package help
+help(exatomic.isotopes)    # Module help
+help(exatomic.Universe)    # Class help
+exatomic.Universe?         # IPython environment
+</pre></div>
+</div>
+<span class="target" id="module-exatomic.__init__"></span><p>A unified data anlaysis and visualization platform for computational and
+theoretical chemists, physicists, etc. Support for molecular geometry and
+orbital visualization is provided via the <a class="reference external" href="https://jupyter.org">Jupyter</a> notebook, a web-browser
+based interactive (multi-programming language) environment.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">This package uses the <a class="reference external" href="https://en.wikipedia.org/wiki/Atomic_units">atomic</a> unit system (Hartree) by default.</p>
+</div>
+<div class="section" id="supported-software">
+<h2>Supported Software<a class="headerlink" href="#supported-software" title="Permalink to this headline">¶</a></h2>
+<p>The list below contains third-party software that is supported by this package.
+For specific features supported (per software), see the appropriate description
+below.</p>
+<ul class="simple">
+<li><code class="xref py py-mod docutils literal notranslate"><span class="pre">__init__</span></code>: <a class="reference external" href="https://www.scm.com">Amsterdam Density Functional</a></li>
+<li><code class="xref py py-mod docutils literal notranslate"><span class="pre">__init__</span></code>: <a class="reference external" href="http://gaussian.com/">Gaussian</a></li>
+<li><code class="xref py py-mod docutils literal notranslate"><span class="pre">__init__</span></code>: <a class="reference external" href="https://gitlab.com/Molcas/OpenMolcas">OpenMolcas</a></li>
+<li><code class="xref py py-mod docutils literal notranslate"><span class="pre">__init__</span></code>: <a class="reference external" href="http://nbo6.chem.wisc.edu/">NBO</a></li>
+<li><code class="xref py py-mod docutils literal notranslate"><span class="pre">__init__</span></code>: <a class="reference external" href="http://www.nwchem-sw.org/index.php/Main_Page">NWChem</a></li>
+<li><code class="xref py py-mod docutils literal notranslate"><span class="pre">__init__</span></code>: <a class="reference external" href="http://www.quantum-espresso.org/">Quantum ESPRESSO</a></li>
+<li><code class="xref py py-mod docutils literal notranslate"><span class="pre">__init__</span></code>: Additional 3rd party support</li>
+</ul>
+</div>
+<span class="target" id="module-exatomic._version"></span><div class="section" id="version-information">
+<h2>Version Information<a class="headerlink" href="#version-information" title="Permalink to this headline">¶</a></h2>
+<p>The version can be checked using the following command:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">exa</span><span class="o">.</span><span class="n">version_info</span>
+<span class="n">exa</span><span class="o">.</span><span class="n">__verion__</span>
+</pre></div>
+</div>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption"><span class="caption-text">Core Usage</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="universe.html">Universe</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="universe.html#the-atomic-universe">The Atomic Universe</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="editor.html">Editors</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="editor.html#atomic-editor">Atomic Editor</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="widgets.html">Visualization</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="widgets.html#universe-notebook-widget">Universe Notebook Widget</a></li>
+<li class="toctree-l2"><a class="reference internal" href="widgets.html#universe-trait-functions">Universe trait functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="widgets.html#lower-level-widgets">Lower Level Widgets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="widgets.html#widget-utilities">Widget Utilities</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="interfaces.html">External Interfaces</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="interfaces.html#interface-to-cclib">Interface to cclib</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interfaces.html#cube-file-support">Cube File Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interfaces.html#xyz-file-editor">XYZ File Editor</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="atom.html">Description of Nuclear Coordinates</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="atom.html#atomic-position-data">Atomic Position Data</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="two.html">Atom Two</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="two.html#atomic-two-body">Atomic Two Body</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="orbital.html">Orbitals</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="orbital.html#orbital-dataframe">Orbital DataFrame</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="basis.html">Description of Basis Sets</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="basis.html#basis-set-representations">Basis Set Representations</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tensor.html">Tensors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="frame.html">Frame</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="frame.html#frame-data">Frame Data</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="molecule.html">Molecules</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="molecule.html#molecule-table">Molecule Table</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption"><span class="caption-text">Extended API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="field.html">Scalar Fields</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="field.html#atomic-field">Atomic Field</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="matrices.html">Matrices</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="matrices.html#id1">Matrices</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="algorithms/basis.html">Basis Algorithms</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="algorithms/basis.html#basis-function-manipulation">Basis Function Manipulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="algorithms/basis.html#spherical-and-solid-harmonics">Spherical and Solid Harmonics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="algorithms/basis.html#numerical-methods-and-classes">Numerical methods and classes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="algorithms/orbital.html">Orbital Algorithms</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="algorithms/orbital.html#numerical-orbital-functions">Numerical Orbital Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="algorithms/orbital.html#molecular-orbital-utilities">Molecular Orbital Utilities</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="algorithms/integrals.html">Common Orbital Integrals</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="algorithms/integrals.html#overlap-computation">Overlap computation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="algorithms/structural.html">Structural Analysis</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="algorithms/structural.html#two-body-properties-computations">Two Body Properties Computations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="algorithms/structural.html#id1">Two Body Properties Computations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="algorithms/structural.html#pair-correlation-functions">Pair Correlation Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="algorithms/structural.html#computation-of-displacement">Computation of Displacement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="algorithms/structural.html#diffusion-coefficients">Diffusion Coefficients</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="algorithms/builders.html">Molecular and System Builders</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="algorithms/builders.html#construction-of-molecules">Construction of Molecules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="algorithms/builders.html#geometry">Geometry</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="algorithms/delocalization.html">Exchange-Correlation Delocalization</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="algorithms/delocalization.html#delocalization">Delocalization</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="algorithms/interpolation.html">Interpolation Helpers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="algorithms/interpolation.html#interpolation">Interpolation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="algorithms/neighbors.html">Clustering Algorithms</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="algorithms/neighbors.html#neighbor-selection-algorithms">Neighbor Selection Algorithms</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption"><span class="caption-text">Misc</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="error.html">Core Exceptions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="error.html#exceptions">Exceptions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="algorithms/indexing.html">Indexing Algorithms</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="algorithms/indexing.html#indexing">Indexing</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tests/base_tests.html">Base Tests</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tests/base_tests.html#tests-for-cube">Tests for <code class="docutils literal notranslate"><span class="pre">cube</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="tests/base_tests.html#tests-for-xyz">Tests for <code class="docutils literal notranslate"><span class="pre">xyz</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tests/core_tests.html">Core Tests</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tests/core_tests.html#matrix-tests">Matrix Tests</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tests/algorithms_tests.html">Algorithms Tests</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tests/algorithms_tests.html#tests-for-symbolic-basis-function-utilities">Tests for symbolic basis function utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tests/algorithms_tests.html#two-body-properties-computations">Two Body Properties Computations</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="universe.html" class="btn btn-neutral float-right" title="Universe" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../notebooks/03_orbitals.html" class="btn btn-neutral" title="Visualize Orbitals" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright .
+      Last updated on Apr 12, 2018.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.3.11',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          
+          SphinxRtdTheme.Navigation.enableSticky();
+          
+      });
+  </script> 
+
+</body>
+</html>

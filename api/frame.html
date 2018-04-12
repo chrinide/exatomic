@@ -1,0 +1,451 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Frame &mdash; exatomic 0.3.11 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Molecules" href="molecule.html" />
+    <link rel="prev" title="Tensors" href="tensor.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> exatomic
+          
+
+          
+            
+            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.3.11
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install.html#anaconda">Anaconda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install.html#pypi">Pypi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install.html#repository">Repository</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install.html#what-s-next">What’s Next?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install.html#note">Note</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../started.html">Getting Started</a></li>
+</ul>
+<p class="caption"><span class="caption-text">General</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">User Docs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="index.html#supported-software">Supported Software</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#version-information">Version Information</a></li>
+<li class="toctree-l2"><a class="reference internal" href="universe.html">Universe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="editor.html">Editors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="widgets.html">Visualization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interfaces.html">External Interfaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="atom.html">Description of Nuclear Coordinates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="two.html">Atom Two</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orbital.html">Orbitals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basis.html">Description of Basis Sets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tensor.html">Tensors</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Frame</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#frame-data">Frame Data</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="molecule.html">Molecules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="field.html">Scalar Fields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="matrices.html">Matrices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="algorithms/basis.html">Basis Algorithms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="algorithms/orbital.html">Orbital Algorithms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="algorithms/integrals.html">Common Orbital Integrals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="algorithms/structural.html">Structural Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="algorithms/builders.html">Molecular and System Builders</a></li>
+<li class="toctree-l2"><a class="reference internal" href="algorithms/delocalization.html">Exchange-Correlation Delocalization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="algorithms/interpolation.html">Interpolation Helpers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="algorithms/neighbors.html">Clustering Algorithms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="error.html">Core Exceptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="algorithms/indexing.html">Indexing Algorithms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tests/base_tests.html">Base Tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tests/core_tests.html">Core Tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tests/algorithms_tests.html">Algorithms Tests</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Examples</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/water-demo.html">Import</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/water-demo.html#Parse-Test-Data">Parse Test Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/water-demo.html#Construct-a-Periodic-Universe-(by-hand)">Construct a Periodic Universe (by hand)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/water-demo.html#Compute-Distances-Between-Atoms">Compute Distances Between Atoms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/water-demo.html#Visualize-Trajectory-(press-play-multiple-times-to-speed-up-framerate)">Visualize Trajectory (press play multiple times to speed up framerate)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/nwchem.html">NWChem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/qe.html">Support for Quantum ESPRESSO in exatomic</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Software</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../software/adf.html">ADF</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../software/gaussian.html">Gaussian</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../software/molcas.html">Molcas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../software/nbo.html">NBO</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../software/nwchem.html">NWChem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../software/qe.html">Quantum ESPRESSO</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contributors</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../contrib.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts.html">Development</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">exatomic</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">User Docs</a> &raquo;</li>
+        
+      <li>Frame</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/api/frame.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast,
+.nboutput.nblast {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast + .nbinput {
+    margin-top: -19px;
+}
+
+/* nice headers on first paragraph of info/warning boxes */
+.admonition .first {
+    margin: -12px;
+    padding: 6px 12px;
+    margin-bottom: 12px;
+    color: #fff;
+    line-height: 1;
+    display: block;
+}
+.admonition.warning .first {
+    background: #f0b37e;
+}
+.admonition.note .first {
+    background: #6ab0de;
+}
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+</style>
+<div class="section" id="module-exatomic.core.frame">
+<span id="frame"></span><h1>Frame<a class="headerlink" href="#module-exatomic.core.frame" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="frame-data">
+<h2>Frame Data<a class="headerlink" href="#frame-data" title="Permalink to this headline">¶</a></h2>
+<p>The primary “coordinate” for the atomic container (<code class="xref py py-class docutils literal notranslate"><span class="pre">Universe</span></code>)
+is the “frame”. The frame concept can be anything; time, step along a geometry
+optimization, different functional, etc. Each frame is distinguished from other
+frames by unique atomic coordinates, a different level of theory, etc.</p>
+<dl class="class">
+<dt id="exatomic.core.frame.Frame">
+<em class="property">class </em><code class="descclassname">exatomic.core.frame.</code><code class="descname">Frame</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/exatomic/core/frame.html#Frame"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#exatomic.core.frame.Frame" title="Permalink to this definition">¶</a></dt>
+<dd><p>Information about the current frame; a frame is a concept that distinguishes
+atomic coordinates along a molecular dynamics simulation, geometry optimization,
+etc.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="26%" />
+<col width="14%" />
+<col width="60%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Column</th>
+<th class="head">Type</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>atom_count</td>
+<td>int</td>
+<td>non-unique integer (req.)</td>
+</tr>
+<tr class="row-odd"><td>molecule_count</td>
+<td>int</td>
+<td>non-unique integer</td>
+</tr>
+<tr class="row-even"><td>ox</td>
+<td>float</td>
+<td>unit cell origin point in x</td>
+</tr>
+<tr class="row-odd"><td>oy</td>
+<td>float</td>
+<td>unit cell origin point in y</td>
+</tr>
+<tr class="row-even"><td>oz</td>
+<td>float</td>
+<td>unit cell origin point in z</td>
+</tr>
+<tr class="row-odd"><td>periodic</td>
+<td>bool</td>
+<td>true if periodic system</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="exatomic.core.frame.Frame.is_periodic">
+<code class="descname">is_periodic</code><span class="sig-paren">(</span><em>how='all'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/exatomic/core/frame.html#Frame.is_periodic"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#exatomic.core.frame.Frame.is_periodic" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if any/all frames are periodic.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>how</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><em>str</em></a>) – Require “any” frames to be periodic (“all” default)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><em>result (bool)</em> – True if any/all frame are periodic</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="exatomic.core.frame.Frame.is_variable_cell">
+<code class="descname">is_variable_cell</code><span class="sig-paren">(</span><em>how='all'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/exatomic/core/frame.html#Frame.is_variable_cell"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#exatomic.core.frame.Frame.is_variable_cell" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if the simulation cell (applicable to periodic simulations) varies
+(e.g. variable cell molecular dynamics).</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="exatomic.core.frame.Frame.compute_cell_magnitudes">
+<code class="descname">compute_cell_magnitudes</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/exatomic/core/frame.html#Frame.compute_cell_magnitudes"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#exatomic.core.frame.Frame.compute_cell_magnitudes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the magnitudes of the unit cell vectors (rx, ry, rz).</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="exatomic.core.frame.compute_frame">
+<code class="descclassname">exatomic.core.frame.</code><code class="descname">compute_frame</code><span class="sig-paren">(</span><em>universe</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/exatomic/core/frame.html#compute_frame"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#exatomic.core.frame.compute_frame" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute (minmal) <code class="xref py py-class docutils literal notranslate"><span class="pre">Frame</span></code> from
+<code class="xref py py-class docutils literal notranslate"><span class="pre">Universe</span></code>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>uni</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Universe</span></code>) – Universe with atom table</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">frame (<code class="xref py py-class docutils literal notranslate"><span class="pre">Frame</span></code>) – Minimal frame table</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="exatomic.core.frame.compute_frame_from_atom">
+<code class="descclassname">exatomic.core.frame.</code><code class="descname">compute_frame_from_atom</code><span class="sig-paren">(</span><em>atom</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/exatomic/core/frame.html#compute_frame_from_atom"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#exatomic.core.frame.compute_frame_from_atom" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute <code class="xref py py-class docutils literal notranslate"><span class="pre">Frame</span></code> from <code class="xref py py-class docutils literal notranslate"><span class="pre">Atom</span></code>
+(or related).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>atom</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Atom</span></code>) – Atom table</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">frame (<code class="xref py py-class docutils literal notranslate"><span class="pre">Frame</span></code>) – Minimal frame table</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="molecule.html" class="btn btn-neutral float-right" title="Molecules" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="tensor.html" class="btn btn-neutral" title="Tensors" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright .
+      Last updated on Apr 12, 2018.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.3.11',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          
+          SphinxRtdTheme.Navigation.enableSticky();
+          
+      });
+  </script> 
+
+</body>
+</html>

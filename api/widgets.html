@@ -1,0 +1,499 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Visualization &mdash; exatomic 0.3.11 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="External Interfaces" href="interfaces.html" />
+    <link rel="prev" title="Editors" href="editor.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> exatomic
+          
+
+          
+            
+            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.3.11
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install.html#anaconda">Anaconda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install.html#pypi">Pypi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install.html#repository">Repository</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install.html#what-s-next">What’s Next?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install.html#note">Note</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../started.html">Getting Started</a></li>
+</ul>
+<p class="caption"><span class="caption-text">General</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">User Docs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="index.html#supported-software">Supported Software</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#version-information">Version Information</a></li>
+<li class="toctree-l2"><a class="reference internal" href="universe.html">Universe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="editor.html">Editors</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Visualization</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#universe-notebook-widget">Universe Notebook Widget</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#universe-trait-functions">Universe trait functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lower-level-widgets">Lower Level Widgets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#widget-utilities">Widget Utilities</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="interfaces.html">External Interfaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="atom.html">Description of Nuclear Coordinates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="two.html">Atom Two</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orbital.html">Orbitals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basis.html">Description of Basis Sets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tensor.html">Tensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="frame.html">Frame</a></li>
+<li class="toctree-l2"><a class="reference internal" href="molecule.html">Molecules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="field.html">Scalar Fields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="matrices.html">Matrices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="algorithms/basis.html">Basis Algorithms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="algorithms/orbital.html">Orbital Algorithms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="algorithms/integrals.html">Common Orbital Integrals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="algorithms/structural.html">Structural Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="algorithms/builders.html">Molecular and System Builders</a></li>
+<li class="toctree-l2"><a class="reference internal" href="algorithms/delocalization.html">Exchange-Correlation Delocalization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="algorithms/interpolation.html">Interpolation Helpers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="algorithms/neighbors.html">Clustering Algorithms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="error.html">Core Exceptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="algorithms/indexing.html">Indexing Algorithms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tests/base_tests.html">Base Tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tests/core_tests.html">Core Tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tests/algorithms_tests.html">Algorithms Tests</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Examples</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/water-demo.html">Import</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/water-demo.html#Parse-Test-Data">Parse Test Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/water-demo.html#Construct-a-Periodic-Universe-(by-hand)">Construct a Periodic Universe (by hand)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/water-demo.html#Compute-Distances-Between-Atoms">Compute Distances Between Atoms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/water-demo.html#Visualize-Trajectory-(press-play-multiple-times-to-speed-up-framerate)">Visualize Trajectory (press play multiple times to speed up framerate)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/nwchem.html">NWChem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/qe.html">Support for Quantum ESPRESSO in exatomic</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Software</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../software/adf.html">ADF</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../software/gaussian.html">Gaussian</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../software/molcas.html">Molcas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../software/nbo.html">NBO</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../software/nwchem.html">NWChem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../software/qe.html">Quantum ESPRESSO</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contributors</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../contrib.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts.html">Development</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">exatomic</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">User Docs</a> &raquo;</li>
+        
+      <li>Visualization</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/api/widgets.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast,
+.nboutput.nblast {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast + .nbinput {
+    margin-top: -19px;
+}
+
+/* nice headers on first paragraph of info/warning boxes */
+.admonition .first {
+    margin: -12px;
+    padding: 6px 12px;
+    margin-bottom: 12px;
+    color: #fff;
+    line-height: 1;
+    display: block;
+}
+.admonition.warning .first {
+    background: #f0b37e;
+}
+.admonition.note .first {
+    background: #6ab0de;
+}
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+</style>
+<div class="section" id="module-exatomic.widgets.widget">
+<span id="visualization"></span><h1>Visualization<a class="headerlink" href="#module-exatomic.widgets.widget" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="universe-notebook-widget">
+<h2>Universe Notebook Widget<a class="headerlink" href="#universe-notebook-widget" title="Permalink to this headline">¶</a></h2>
+<p>To visualize a universe containing atoms, molecules, orbitals, etc., do
+the following in a Jupyter notebook environment.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">exatomic</span><span class="o">.</span><span class="n">UniverseWidget</span><span class="p">(</span><span class="n">u</span><span class="p">)</span>    <span class="c1"># type(u) is exatomic.core.universe.Universe</span>
+</pre></div>
+</div>
+<dl class="class">
+<dt id="exatomic.widgets.widget.DemoContainer">
+<em class="property">class </em><code class="descclassname">exatomic.widgets.widget.</code><code class="descname">DemoContainer</code><span class="sig-paren">(</span><em>*scenes</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/exatomic/widgets/widget.html#DemoContainer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#exatomic.widgets.widget.DemoContainer" title="Permalink to this definition">¶</a></dt>
+<dd><p>A proof-of-concept mixing GUI controls with a three.js scene.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="exatomic.widgets.widget.TensorContainer">
+<em class="property">class </em><code class="descclassname">exatomic.widgets.widget.</code><code class="descname">TensorContainer</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/exatomic/widgets/widget.html#TensorContainer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#exatomic.widgets.widget.TensorContainer" title="Permalink to this definition">¶</a></dt>
+<dd><p>A simple container to implement cartesian tensor visualization.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>file_path</strong> (<em>string</em>) – Takes a file path name to pass through the Tensor.from_file function. Default to None.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="exatomic.widgets.widget.DemoUniverse">
+<em class="property">class </em><code class="descclassname">exatomic.widgets.widget.</code><code class="descname">DemoUniverse</code><span class="sig-paren">(</span><em>*scenes</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/exatomic/widgets/widget.html#DemoUniverse"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#exatomic.widgets.widget.DemoUniverse" title="Permalink to this definition">¶</a></dt>
+<dd><p>A showcase of functional forms used in quantum chemistry.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="exatomic.widgets.widget.UniverseWidget">
+<em class="property">class </em><code class="descclassname">exatomic.widgets.widget.</code><code class="descname">UniverseWidget</code><span class="sig-paren">(</span><em>*unis</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/exatomic/widgets/widget.html#UniverseWidget"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#exatomic.widgets.widget.UniverseWidget" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Universe</span></code> viewing widget.</p>
+</dd></dl>
+
+</div>
+<span class="target" id="module-exatomic.widgets.traits"></span><div class="section" id="universe-trait-functions">
+<h2>Universe trait functions<a class="headerlink" href="#universe-trait-functions" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="exatomic.widgets.traits.atom_traits">
+<code class="descclassname">exatomic.widgets.traits.</code><code class="descname">atom_traits</code><span class="sig-paren">(</span><em>df</em>, <em>atomcolors=None</em>, <em>atomradii=None</em>, <em>atomlabels=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/exatomic/widgets/traits.html#atom_traits"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#exatomic.widgets.traits.atom_traits" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get atom table traits. Atomic size (using the covalent radius) and atom
+colors (using the common <a class="reference external" href="http://jmol.sourceforge.net/jscolors/">Jmol</a> color scheme) are packed as dicts and
+obtained from the static data in exa.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="exatomic.widgets.traits.field_traits">
+<code class="descclassname">exatomic.widgets.traits.</code><code class="descname">field_traits</code><span class="sig-paren">(</span><em>df</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/exatomic/widgets/traits.html#field_traits"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#exatomic.widgets.traits.field_traits" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get field table traits.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="exatomic.widgets.traits.two_traits">
+<code class="descclassname">exatomic.widgets.traits.</code><code class="descname">two_traits</code><span class="sig-paren">(</span><em>uni</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/exatomic/widgets/traits.html#two_traits"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#exatomic.widgets.traits.two_traits" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get two table traitlets.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="exatomic.widgets.traits.frame_traits">
+<code class="descclassname">exatomic.widgets.traits.</code><code class="descname">frame_traits</code><span class="sig-paren">(</span><em>uni</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/exatomic/widgets/traits.html#frame_traits"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#exatomic.widgets.traits.frame_traits" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get frame table traits.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="exatomic.widgets.traits.uni_traits">
+<code class="descclassname">exatomic.widgets.traits.</code><code class="descname">uni_traits</code><span class="sig-paren">(</span><em>uni</em>, <em>atomcolors=None</em>, <em>atomradii=None</em>, <em>atomlabels=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/exatomic/widgets/traits.html#uni_traits"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#exatomic.widgets.traits.uni_traits" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get Universe traits.</p>
+</dd></dl>
+
+</div>
+<span class="target" id="module-exatomic.widgets.widget_base"></span><div class="section" id="lower-level-widgets">
+<h2>Lower Level Widgets<a class="headerlink" href="#lower-level-widgets" title="Permalink to this headline">¶</a></h2>
+<p>Lower level support widgets framework.</p>
+<dl class="class">
+<dt id="exatomic.widgets.widget_base.ExatomicScene">
+<em class="property">class </em><code class="descclassname">exatomic.widgets.widget_base.</code><code class="descname">ExatomicScene</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/exatomic/widgets/widget_base.html#ExatomicScene"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#exatomic.widgets.widget_base.ExatomicScene" title="Permalink to this definition">¶</a></dt>
+<dd><p>A three.js sandbox for 3D visualization.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="exatomic.widgets.widget_base.TensorScene">
+<em class="property">class </em><code class="descclassname">exatomic.widgets.widget_base.</code><code class="descname">TensorScene</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/exatomic/widgets/widget_base.html#TensorScene"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#exatomic.widgets.widget_base.TensorScene" title="Permalink to this definition">¶</a></dt>
+<dd><p>Visualize a cartesian tensor.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="exatomic.widgets.widget_base.UniverseScene">
+<em class="property">class </em><code class="descclassname">exatomic.widgets.widget_base.</code><code class="descname">UniverseScene</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/exatomic/widgets/widget_base.html#UniverseScene"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#exatomic.widgets.widget_base.UniverseScene" title="Permalink to this definition">¶</a></dt>
+<dd><p>A scene for viewing quantum systems.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="exatomic.widgets.widget_base.ExatomicBox">
+<em class="property">class </em><code class="descclassname">exatomic.widgets.widget_base.</code><code class="descname">ExatomicBox</code><span class="sig-paren">(</span><em>*objs</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/exatomic/widgets/widget_base.html#ExatomicBox"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#exatomic.widgets.widget_base.ExatomicBox" title="Permalink to this definition">¶</a></dt>
+<dd><p>Base class for containers of a GUI and scene.</p>
+</dd></dl>
+
+</div>
+<span class="target" id="module-exatomic.widgets.widget_utils"></span><div class="section" id="widget-utilities">
+<h2>Widget Utilities<a class="headerlink" href="#widget-utilities" title="Permalink to this headline">¶</a></h2>
+<p>Widget layout and structure.</p>
+<dl class="class">
+<dt id="exatomic.widgets.widget_utils.Folder">
+<em class="property">class </em><code class="descclassname">exatomic.widgets.widget_utils.</code><code class="descname">Folder</code><span class="sig-paren">(</span><em>control</em>, <em>content</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/exatomic/widgets/widget_utils.html#Folder"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#exatomic.widgets.widget_utils.Folder" title="Permalink to this definition">¶</a></dt>
+<dd><p>A VBox that shows and hides widgets. For proper
+indentation, instantiate sub-folders before passing to
+super-folders. Should not exist outside of a GUI box.</p>
+<dl class="method">
+<dt id="exatomic.widgets.widget_utils.Folder.activate">
+<code class="descname">activate</code><span class="sig-paren">(</span><em>*keys</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/exatomic/widgets/widget_utils.html#Folder.activate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#exatomic.widgets.widget_utils.Folder.activate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Activate (show) widgets that are not disabled.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="exatomic.widgets.widget_utils.Folder.deactivate">
+<code class="descname">deactivate</code><span class="sig-paren">(</span><em>*keys</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/exatomic/widgets/widget_utils.html#Folder.deactivate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#exatomic.widgets.widget_utils.Folder.deactivate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deactivate (hide) widgets.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="exatomic.widgets.widget_utils.Folder.insert">
+<code class="descname">insert</code><span class="sig-paren">(</span><em>idx</em>, <em>key</em>, <em>obj</em>, <em>active=True</em>, <em>update=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/exatomic/widgets/widget_utils.html#Folder.insert"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#exatomic.widgets.widget_utils.Folder.insert" title="Permalink to this definition">¶</a></dt>
+<dd><p>Insert widget into Folder, behaves as list.insert .</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="exatomic.widgets.widget_utils.Folder.update">
+<code class="descname">update</code><span class="sig-paren">(</span><em>objs</em>, <em>relayout=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/exatomic/widgets/widget_utils.html#Folder.update"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#exatomic.widgets.widget_utils.Folder.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update the Folder widgets, behaves as dict.update.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="exatomic.widgets.widget_utils.Folder.move_to_end">
+<code class="descname">move_to_end</code><span class="sig-paren">(</span><em>*keys</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/exatomic/widgets/widget_utils.html#Folder.move_to_end"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#exatomic.widgets.widget_utils.Folder.move_to_end" title="Permalink to this definition">¶</a></dt>
+<dd><p>Move widget(s) to the end of the folder.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="exatomic.widgets.widget_utils.Folder.pop">
+<code class="descname">pop</code><span class="sig-paren">(</span><em>key</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/exatomic/widgets/widget_utils.html#Folder.pop"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#exatomic.widgets.widget_utils.Folder.pop" title="Permalink to this definition">¶</a></dt>
+<dd><p>Pop a widget from the folder.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="exatomic.widgets.widget_utils.GUIBox">
+<em class="property">class </em><code class="descclassname">exatomic.widgets.widget_utils.</code><code class="descname">GUIBox</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/exatomic/widgets/widget_utils.html#GUIBox"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#exatomic.widgets.widget_utils.GUIBox" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="exatomic.widgets.widget_utils.gui_field_widgets">
+<code class="descclassname">exatomic.widgets.widget_utils.</code><code class="descname">gui_field_widgets</code><span class="sig-paren">(</span><em>uni=False</em>, <em>test=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/exatomic/widgets/widget_utils.html#gui_field_widgets"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#exatomic.widgets.widget_utils.gui_field_widgets" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return new widgets for field GUI functionality.</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="interfaces.html" class="btn btn-neutral float-right" title="External Interfaces" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="editor.html" class="btn btn-neutral" title="Editors" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright .
+      Last updated on Apr 12, 2018.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.3.11',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          
+          SphinxRtdTheme.Navigation.enableSticky();
+          
+      });
+  </script> 
+
+</body>
+</html>

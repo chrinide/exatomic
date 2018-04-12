@@ -1,0 +1,660 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>exatomic.algorithms.neighbors &mdash; exatomic 0.3.11 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> exatomic
+          
+
+          
+            
+            <img src="../../../_static/logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.3.11
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../install.html#anaconda">Anaconda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../install.html#pypi">Pypi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../install.html#repository">Repository</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../install.html#what-s-next">What’s Next?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../install.html#note">Note</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../started.html">Getting Started</a></li>
+</ul>
+<p class="caption"><span class="caption-text">General</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/index.html">User Docs</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Examples</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../notebooks/water-demo.html">Import</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../notebooks/water-demo.html#Parse-Test-Data">Parse Test Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../notebooks/water-demo.html#Construct-a-Periodic-Universe-(by-hand)">Construct a Periodic Universe (by hand)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../notebooks/water-demo.html#Compute-Distances-Between-Atoms">Compute Distances Between Atoms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../notebooks/water-demo.html#Visualize-Trajectory-(press-play-multiple-times-to-speed-up-framerate)">Visualize Trajectory (press play multiple times to speed up framerate)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../notebooks/nwchem.html">NWChem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../notebooks/qe.html">Support for Quantum ESPRESSO in exatomic</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Software</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../software/adf.html">ADF</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../software/gaussian.html">Gaussian</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../software/molcas.html">Molcas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../software/nbo.html">NBO</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../software/nwchem.html">NWChem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../software/qe.html">Quantum ESPRESSO</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contributors</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../contrib.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../concepts.html">Development</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">exatomic</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+      <li>exatomic.algorithms.neighbors</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for exatomic.algorithms.neighbors</h1><div class="highlight"><pre>
+<span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="c1"># Copyright (c) 2015-2018, Exa Analytics Development Team</span>
+<span class="c1"># Distributed under the terms of the Apache License 2.0</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Neighbor Selection Algorithms</span>
+<span class="sd">###############################</span>
+<span class="sd">This module provides algoirthms for selecting nearest neighbors, e.g. nearest</span>
+<span class="sd">solvent molecules to a solute molecule. Because two body properties do not always</span>
+<span class="sd">represent the desired molecules (i.e. bonds appear where they are not desired),</span>
+<span class="sd">these algorithms are not completely black box.</span>
+
+<span class="sd">Before performing a search, check that the molecule table is computed as desired</span>
+<span class="sd">and classified (if necessary): see :func:`~exatomic.two.BaseTwo.compute_bonds`</span>
+<span class="sd">and :func:`~exatomic.molecule.Molecule.classify`.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numba</span> <span class="k">as</span> <span class="nn">nb</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="k">import</span> <span class="n">defaultdict</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="k">import</span> <span class="n">display</span>
+<span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="k">import</span> <span class="n">FloatProgress</span>
+<span class="kn">from</span> <span class="nn">exatomic.base</span> <span class="k">import</span> <span class="n">nbpll</span>
+<span class="kn">from</span> <span class="nn">exatomic.core.atom</span> <span class="k">import</span> <span class="n">Atom</span>
+<span class="kn">from</span> <span class="nn">exatomic.core.universe</span> <span class="k">import</span> <span class="n">Universe</span>
+
+
+<span class="nd">@nb</span><span class="o">.</span><span class="n">jit</span><span class="p">(</span><span class="n">nopython</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">parallel</span><span class="o">=</span><span class="n">nbpll</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">_worker</span><span class="p">(</span><span class="n">idx</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">a</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Generate a 3x3x3 &#39;super&#39; cell from a cubic unit cell.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        idx (array): Array of index values</span>
+<span class="sd">        x (array): Array of x coordinates</span>
+<span class="sd">        y (array): Array of y coordinates</span>
+<span class="sd">        z (array): Array of z coordinates</span>
+<span class="sd">        a (float): Cubic unit cell dimension</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">idxs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="mi">27</span><span class="o">*</span><span class="n">n</span><span class="p">,</span> <span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int64</span><span class="p">)</span>
+    <span class="n">prj</span> <span class="o">=</span> <span class="n">idxs</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">px</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="mi">27</span><span class="o">*</span><span class="n">n</span><span class="p">,</span> <span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>
+    <span class="n">py</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">pz</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">m</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]:</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]:</span>
+            <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]:</span>
+                <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+                    <span class="n">idxs</span><span class="p">[</span><span class="n">m</span><span class="p">]</span> <span class="o">=</span> <span class="n">idx</span><span class="p">[</span><span class="n">l</span><span class="p">]</span>
+                    <span class="n">px</span><span class="p">[</span><span class="n">m</span><span class="p">]</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="n">l</span><span class="p">]</span> <span class="o">+</span> <span class="n">i</span><span class="o">*</span><span class="n">a</span>
+                    <span class="n">py</span><span class="p">[</span><span class="n">m</span><span class="p">]</span> <span class="o">=</span> <span class="n">y</span><span class="p">[</span><span class="n">l</span><span class="p">]</span> <span class="o">+</span> <span class="n">j</span><span class="o">*</span><span class="n">a</span>
+                    <span class="n">pz</span><span class="p">[</span><span class="n">m</span><span class="p">]</span> <span class="o">=</span> <span class="n">z</span><span class="p">[</span><span class="n">l</span><span class="p">]</span> <span class="o">+</span> <span class="n">k</span><span class="o">*</span><span class="n">a</span>
+                    <span class="n">prj</span><span class="p">[</span><span class="n">m</span><span class="p">]</span> <span class="o">=</span> <span class="n">p</span>
+                    <span class="n">m</span> <span class="o">+=</span> <span class="mi">1</span>
+                <span class="n">p</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">idxs</span><span class="p">,</span> <span class="n">px</span><span class="p">,</span> <span class="n">py</span><span class="p">,</span> <span class="n">pz</span><span class="p">,</span> <span class="n">prj</span>
+
+
+<span class="k">def</span> <span class="nf">_create_super_universe</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">a</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Generate a 3x3x3 super cell from a cubic periodic universe</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        u (:class:`~exatomic.core.universe.Universe`): Universe</span>
+<span class="sd">        a (float): Cubic unit cell dimension</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        uni (:class:`~exatomic.core.universe.Universe`): Universe of 3x3x3x super cell</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">adxs</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">xs</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">ys</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">zs</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">prjs</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">fdxs</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">grps</span> <span class="o">=</span> <span class="n">u</span><span class="o">.</span><span class="n">atom</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;frame&quot;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">fdx</span><span class="p">,</span> <span class="n">atom</span> <span class="ow">in</span> <span class="n">grps</span><span class="p">:</span>
+        <span class="n">adx</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">prj</span> <span class="o">=</span> <span class="n">_worker</span><span class="p">(</span><span class="n">atom</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">int64</span><span class="p">),</span>
+                                    <span class="n">atom</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">),</span>
+                                    <span class="n">atom</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">),</span>
+                                    <span class="n">atom</span><span class="p">[</span><span class="s1">&#39;z&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">),</span> <span class="n">a</span><span class="p">)</span>
+        <span class="n">adxs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">adx</span><span class="p">)</span>
+        <span class="n">xs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="n">ys</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+        <span class="n">zs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+        <span class="n">prjs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">prj</span><span class="p">)</span>
+        <span class="n">fdxs</span> <span class="o">+=</span> <span class="p">[</span><span class="n">fdx</span><span class="p">]</span><span class="o">*</span><span class="nb">len</span><span class="p">(</span><span class="n">adx</span><span class="p">)</span>
+    <span class="n">adxs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span><span class="n">adxs</span><span class="p">)</span>
+    <span class="n">xs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span><span class="n">xs</span><span class="p">)</span>
+    <span class="n">ys</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span><span class="n">ys</span><span class="p">)</span>
+    <span class="n">zs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span><span class="n">zs</span><span class="p">)</span>
+    <span class="n">prjs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span><span class="n">prjs</span><span class="p">)</span>
+    <span class="c1"># Overwrite the last &#39;atom&#39; group because that value doesn&#39;t need to exist anymore</span>
+    <span class="n">atom</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">from_dict</span><span class="p">({</span><span class="s1">&#39;atom&#39;</span><span class="p">:</span> <span class="n">adxs</span><span class="p">,</span> <span class="s1">&#39;x&#39;</span><span class="p">:</span> <span class="n">xs</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">:</span> <span class="n">ys</span><span class="p">,</span> <span class="s1">&#39;z&#39;</span><span class="p">:</span> <span class="n">zs</span><span class="p">,</span> <span class="s1">&#39;prj&#39;</span><span class="p">:</span> <span class="n">prjs</span><span class="p">})</span>
+    <span class="n">atom</span><span class="p">[</span><span class="s1">&#39;frame&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">fdxs</span>
+    <span class="n">atom</span><span class="p">[</span><span class="s1">&#39;symbol&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">atom</span><span class="p">[</span><span class="s1">&#39;atom&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">atom</span><span class="p">[</span><span class="s1">&#39;symbol&#39;</span><span class="p">])</span>
+    <span class="n">atom</span><span class="p">[</span><span class="s1">&#39;label&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">atom</span><span class="p">[</span><span class="s1">&#39;atom&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">atom</span><span class="p">[</span><span class="s1">&#39;label&#39;</span><span class="p">])</span>
+    <span class="n">atom</span> <span class="o">=</span> <span class="n">Atom</span><span class="p">(</span><span class="n">atom</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">Universe</span><span class="p">(</span><span class="n">atom</span><span class="o">=</span><span class="n">atom</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="periodic_nearest_neighbors_by_atom"><a class="viewcode-back" href="../../../api/algorithms/neighbors.html#exatomic.algorithms.neighbors.periodic_nearest_neighbors_by_atom">[docs]</a><span class="k">def</span> <span class="nf">periodic_nearest_neighbors_by_atom</span><span class="p">(</span><span class="n">uni</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">sizes</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Determine nearest neighbor molecules to a given source (or sources) and</span>
+<span class="sd">    return the data as a dataframe.</span>
+
+<span class="sd">    For a simple cubic periodic system with unit cell dimension ``a``,</span>
+<span class="sd">    clusters can be generated as follows. In the example below, additional</span>
+<span class="sd">    keyword arguments have been included as they are almost always required</span>
+<span class="sd">    in order to correctly identify molecular units semi-empirically.</span>
+
+<span class="sd">    .. code-block:: python</span>
+
+<span class="sd">        periodic_nearest_neighbors_by_atom(u, [0], 40.0, [0, 5, 10, 50],</span>
+<span class="sd">                                           dmax=40.0, C=1.6, O=1.6)</span>
+
+<span class="sd">    Argument descriptions can be found below. The additional keyword arguments,</span>
+<span class="sd">    ``dmax``, ``C``, ``O``, are passed directly to the two body computation used</span>
+<span class="sd">    to determine (semi-empirically) molecular units. Note that although molecules</span>
+<span class="sd">    are computed, neighboring molecular units are determine by an atom to atom</span>
+<span class="sd">    criteria.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        uni (:class:`~exatomic.core.universe.Universe`): Universe</span>
+<span class="sd">        source (int, str, list): Integer label or string symbol of source atom</span>
+<span class="sd">        a (float): Cubic unit cell dimension</span>
+<span class="sd">        sizes (list): List of slices to create</span>
+<span class="sd">        kwargs: Additional keyword arguments to be passed to atom two body calculation</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        dct (dict): Dictionary of sliced universes and nearest neighbor table</span>
+
+<span class="sd">    See Also:</span>
+<span class="sd">        Sliced universe construction can be facilitated by</span>
+<span class="sd">        :func:`~exatomic.algorithms.neighbors.construct`.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">sorter</span><span class="p">(</span><span class="n">group</span><span class="p">,</span> <span class="n">source_atom_idxs</span><span class="p">):</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="n">group</span><span class="p">[[</span><span class="s1">&#39;atom0&#39;</span><span class="p">,</span> <span class="s1">&#39;atom1&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">stack</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">s</span><span class="p">[</span><span class="o">~</span><span class="n">s</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">source_atom_idxs</span><span class="p">)]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+
+    <span class="n">dct</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
+    <span class="n">grps</span> <span class="o">=</span> <span class="n">uni</span><span class="o">.</span><span class="n">atom</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;frame&quot;</span><span class="p">)</span>
+    <span class="n">ntot</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">grps</span><span class="p">)</span>
+    <span class="n">fp</span> <span class="o">=</span> <span class="n">FloatProgress</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s2">&quot;Slicing:&quot;</span><span class="p">)</span>
+    <span class="n">display</span><span class="p">(</span><span class="n">fp</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="n">fdx</span><span class="p">,</span> <span class="n">atom</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">grps</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">atom</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">uu</span> <span class="o">=</span> <span class="n">_create_super_universe</span><span class="p">(</span><span class="n">Universe</span><span class="p">(</span><span class="n">atom</span><span class="o">=</span><span class="n">atom</span><span class="o">.</span><span class="n">copy</span><span class="p">()),</span> <span class="n">a</span><span class="p">)</span>
+            <span class="n">uu</span><span class="o">.</span><span class="n">compute_atom_two</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+            <span class="n">uu</span><span class="o">.</span><span class="n">compute_molecule</span><span class="p">()</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">int64</span><span class="p">)):</span>
+                <span class="n">source_atom_idxs</span> <span class="o">=</span> <span class="n">uu</span><span class="o">.</span><span class="n">atom</span><span class="p">[(</span><span class="n">uu</span><span class="o">.</span><span class="n">atom</span><span class="p">[</span><span class="s1">&#39;label&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">source</span><span class="p">)</span> <span class="o">&amp;</span>
+                                           <span class="p">(</span><span class="n">uu</span><span class="o">.</span><span class="n">atom</span><span class="p">[</span><span class="s1">&#39;prj&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">13</span><span class="p">)]</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">values</span>
+            <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)):</span>
+                <span class="n">source_atom_idxs</span> <span class="o">=</span> <span class="n">uu</span><span class="o">.</span><span class="n">atom</span><span class="p">[</span><span class="n">uu</span><span class="o">.</span><span class="n">atom</span><span class="p">[</span><span class="s1">&#39;label&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">source</span><span class="p">)</span> <span class="o">&amp;</span>
+                                           <span class="p">(</span><span class="n">uu</span><span class="o">.</span><span class="n">atom</span><span class="p">[</span><span class="s1">&#39;prj&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">13</span><span class="p">)]</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">values</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">source_atom_idxs</span> <span class="o">=</span> <span class="n">uu</span><span class="o">.</span><span class="n">atom</span><span class="p">[(</span><span class="n">uu</span><span class="o">.</span><span class="n">atom</span><span class="p">[</span><span class="s1">&#39;symbol&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">source</span><span class="p">)</span> <span class="o">&amp;</span>
+                                           <span class="p">(</span><span class="n">uu</span><span class="o">.</span><span class="n">atom</span><span class="p">[</span><span class="s1">&#39;prj&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">13</span><span class="p">)]</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">values</span>
+            <span class="n">source_molecule_idxs</span> <span class="o">=</span> <span class="n">uu</span><span class="o">.</span><span class="n">atom</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">source_atom_idxs</span><span class="p">,</span> <span class="s1">&#39;molecule&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+            <span class="n">uu</span><span class="o">.</span><span class="n">atom_two</span><span class="p">[</span><span class="s1">&#39;frame&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">uu</span><span class="o">.</span><span class="n">atom_two</span><span class="p">[</span><span class="s1">&#39;atom0&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">uu</span><span class="o">.</span><span class="n">atom</span><span class="p">[</span><span class="s1">&#39;frame&#39;</span><span class="p">])</span>
+            <span class="n">nearest_atoms</span> <span class="o">=</span> <span class="n">uu</span><span class="o">.</span><span class="n">atom_two</span><span class="p">[(</span><span class="n">uu</span><span class="o">.</span><span class="n">atom_two</span><span class="p">[</span><span class="s1">&#39;atom0&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">source_atom_idxs</span><span class="p">))</span> <span class="o">|</span>
+                                        <span class="p">(</span><span class="n">uu</span><span class="o">.</span><span class="n">atom_two</span><span class="p">[</span><span class="s1">&#39;atom1&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">source_atom_idxs</span><span class="p">))]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">&quot;dr&quot;</span><span class="p">)[[</span><span class="s1">&#39;frame&#39;</span><span class="p">,</span> <span class="s1">&#39;atom0&#39;</span><span class="p">,</span> <span class="s1">&#39;atom1&#39;</span><span class="p">]]</span>
+            <span class="n">nearest</span> <span class="o">=</span> <span class="n">nearest_atoms</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;frame&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">sorter</span><span class="p">,</span> <span class="n">source_atom_idxs</span><span class="o">=</span><span class="n">source_atom_idxs</span><span class="p">)</span>
+            <span class="k">del</span> <span class="n">nearest</span><span class="p">[</span><span class="s1">&#39;level_1&#39;</span><span class="p">]</span>
+            <span class="n">nearest</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;frame&#39;</span><span class="p">,</span> <span class="s1">&#39;idx&#39;</span><span class="p">]</span>
+            <span class="n">nearest</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;two&#39;</span><span class="p">,</span> <span class="s1">&#39;atom&#39;</span><span class="p">]</span>
+            <span class="n">nearest</span><span class="p">[</span><span class="s1">&#39;molecule&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">nearest</span><span class="p">[</span><span class="s1">&#39;atom&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">uu</span><span class="o">.</span><span class="n">atom</span><span class="p">[</span><span class="s1">&#39;molecule&#39;</span><span class="p">])</span>
+            <span class="n">nearest</span> <span class="o">=</span> <span class="n">nearest</span><span class="p">[</span><span class="o">~</span><span class="n">nearest</span><span class="p">[</span><span class="s1">&#39;molecule&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">source_molecule_idxs</span><span class="p">)]</span>
+            <span class="n">nearest</span> <span class="o">=</span> <span class="n">nearest</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">(</span><span class="s1">&#39;molecule&#39;</span><span class="p">,</span> <span class="n">keep</span><span class="o">=</span><span class="s1">&#39;first&#39;</span><span class="p">)</span>
+            <span class="n">nearest</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="n">nearest</span><span class="p">[</span><span class="s1">&#39;frame&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">nearest</span><span class="p">[</span><span class="s1">&#39;frame&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+            <span class="n">nearest</span><span class="p">[</span><span class="s1">&#39;molecule&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">nearest</span><span class="p">[</span><span class="s1">&#39;molecule&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+            <span class="n">dct</span><span class="p">[</span><span class="s1">&#39;nearest&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">nearest</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">nn</span> <span class="ow">in</span> <span class="n">sizes</span><span class="p">:</span>
+                <span class="n">atm</span> <span class="o">=</span> <span class="p">[]</span>
+                <span class="k">for</span> <span class="n">j</span><span class="p">,</span> <span class="n">fdx</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">nearest</span><span class="p">[</span><span class="s1">&#39;frame&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()):</span>
+                    <span class="n">mdxs</span> <span class="o">=</span> <span class="n">nearest</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">nearest</span><span class="p">[</span><span class="s1">&#39;frame&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">fdx</span><span class="p">,</span> <span class="s1">&#39;molecule&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()[:</span><span class="n">nn</span><span class="p">]</span>
+                    <span class="n">mdxs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">source_molecule_idxs</span><span class="p">[</span><span class="n">j</span><span class="p">])</span>
+                    <span class="n">atm</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">uu</span><span class="o">.</span><span class="n">atom</span><span class="p">[</span><span class="n">uu</span><span class="o">.</span><span class="n">atom</span><span class="p">[</span><span class="s1">&#39;molecule&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">mdxs</span><span class="p">)][[</span><span class="s1">&#39;symbol&#39;</span><span class="p">,</span> <span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="s1">&#39;z&#39;</span><span class="p">,</span> <span class="s1">&#39;frame&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">copy</span><span class="p">())</span>
+                <span class="n">dct</span><span class="p">[</span><span class="n">nn</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">atm</span><span class="p">,</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+        <span class="n">fp</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">i</span><span class="o">/</span><span class="n">ntot</span><span class="o">*</span><span class="mi">100</span>
+    <span class="n">dct</span><span class="p">[</span><span class="s1">&#39;nearest&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">dct</span><span class="p">[</span><span class="s1">&#39;nearest&#39;</span><span class="p">],</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">nn</span> <span class="ow">in</span> <span class="n">sizes</span><span class="p">:</span>
+        <span class="n">dct</span><span class="p">[</span><span class="n">nn</span><span class="p">]</span> <span class="o">=</span> <span class="n">Universe</span><span class="p">(</span><span class="n">atom</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">dct</span><span class="p">[</span><span class="n">nn</span><span class="p">],</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+    <span class="n">fp</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">dct</span></div>
+
+
+<span class="c1">#def nearest_molecules(universe, n, sources, restrictions=None, how=&#39;atom&#39;,</span>
+<span class="c1">#                      free_boundary=True, center=(0, 0, 0)):</span>
+<span class="c1">#    &quot;&quot;&quot;</span>
+<span class="c1">#    Select nearest molecules to a source or sources.</span>
+<span class="c1">#</span>
+<span class="c1">#    .. code-block:: Python</span>
+<span class="c1">#</span>
+<span class="c1">#        source = &#39;analyte&#39;    # By molecule classification  (Molecule)</span>
+<span class="c1">#        source = 1            # By atom label (Atom)</span>
+<span class="c1">#        source = &#39;C&#39;          # By atom symbol (Atom)</span>
+<span class="c1">#        nearest_molecules(uni, 5, source)</span>
+<span class="c1">#</span>
+<span class="c1">#    .. code-block:: Python</span>
+<span class="c1">#</span>
+<span class="c1">#        sources = [&#39;solute&#39;, &#39;C&#39;]   # Can mix and match..</span>
+<span class="c1">#        nearest_molecules(uni, 5, sources)    # Nearest neighbors to &#39;C&#39; atoms on &#39;solute&#39; molecules</span>
+<span class="c1">#</span>
+<span class="c1">#    Args:</span>
+<span class="c1">#        universe (:class:`~exatomic.container.Universe`): An atomic universe</span>
+<span class="c1">#        n (int or list): Number(s) of neighbors to select to each source (see note)</span>
+<span class="c1">#        sources: Source molecules/atoms from which to search for neighbors</span>
+<span class="c1">#        restrictions: Restrict neighbors (non-source molecules/atoms) by atom symbol or molecule classification</span>
+<span class="c1">#        how (str): Search by atom to atom distance (&#39;atom&#39;) or molecule center of mass (&#39;com&#39;)</span>
+<span class="c1">#        free_boundary (bool): Convert to free boundary conditions (if periodic system - default true)</span>
+<span class="c1">#        center (array): Center the result on the given point (default (0, 0, 0))</span>
+<span class="c1">#</span>
+<span class="c1">#    Returns:</span>
+<span class="c1">#        unis (dict): Dictionary of number of neighbors keys, universe values</span>
+<span class="c1">#    &quot;&quot;&quot;</span>
+<span class="c1">#    #source_atoms, other_atoms, source_molecules, other_molecules, n = _slice_atoms_molecules(universe, sources, restrictions, n)</span>
+<span class="c1">#    source_atoms, other_atoms, source_molecules, _, n = _slice_atoms_molecules(universe, sources, restrictions, n)</span>
+<span class="c1">#    ordered_molecules, ordered_twos = _compute_neighbors_by_atom(universe, source_atoms, other_atoms, source_molecules)</span>
+<span class="c1">#    unis = {}</span>
+<span class="c1">#    if free_boundary == True:</span>
+<span class="c1">#        for nn in n:</span>
+<span class="c1">#            unis[nn] = _build_free_universe(universe, ordered_molecules,</span>
+<span class="c1">#                                            ordered_twos, nn, source_atoms,</span>
+<span class="c1">#                                            source_molecules)</span>
+<span class="c1">#    else:</span>
+<span class="c1">#        raise NotImplementedError()</span>
+<span class="c1">#    return unis</span>
+<span class="c1">#</span>
+<span class="c1">#</span>
+<span class="c1">#def _slice_atoms_molecules(universe, sources, restrictions, n):</span>
+<span class="c1">#    &quot;&quot;&quot;</span>
+<span class="c1">#    Initial check of the unvierse data and argument types and creation of atom</span>
+<span class="c1">#    and molecule table slices.</span>
+<span class="c1">#    &quot;&quot;&quot;</span>
+<span class="c1">#    if not isinstance(sources, list):</span>
+<span class="c1">#        sources = [sources]</span>
+<span class="c1">#    if not isinstance(restrictions, list) and restrictions is not None:</span>
+<span class="c1">#        restrictions = [restrictions]</span>
+<span class="c1">#    if isinstance(n, (int, np.int32, np.int64)):</span>
+<span class="c1">#        n = [n]</span>
+<span class="c1">#    labels = universe.atom.get_atom_labels()</span>
+<span class="c1">#    del_label = False</span>
+<span class="c1">#    if &#39;label&#39; not in universe.atom.columns:</span>
+<span class="c1">#        del_label = True</span>
+<span class="c1">#        universe.atom[&#39;label&#39;] = labels</span>
+<span class="c1">#    labels = labels.unique()</span>
+<span class="c1">#    symbols = universe.atom[&#39;symbol&#39;].unique()</span>
+<span class="c1">#    classification = []</span>
+<span class="c1">#    if &#39;classification&#39; in universe.molecule.columns:</span>
+<span class="c1">#        classification = universe.molecule[&#39;classification&#39;].unique()</span>
+<span class="c1">#    if all(source in labels for source in sources):</span>
+<span class="c1">#        source_atoms = universe.atom[universe.atom[&#39;label&#39;].isin(sources)]</span>
+<span class="c1">#        mdx = source_atoms[&#39;molecule&#39;].astype(np.int64)</span>
+<span class="c1">#        source_molecules = universe.molecule[universe.molecule.index.isin(mdx)]</span>
+<span class="c1">#    elif all(source in symbols for source in sources):</span>
+<span class="c1">#        source_atoms = universe.atom[universe.atom[&#39;symbol&#39;].isin(sources)]</span>
+<span class="c1">#        mdx = source_atoms[&#39;molecule&#39;].astype(np.int64)</span>
+<span class="c1">#        source_molecules = universe.molecule[universe.molecule.index.isin(mdx)]</span>
+<span class="c1">#    elif all(source in classification for source in sources):</span>
+<span class="c1">#        source_molecules = universe.molecule[universe.molecule[&#39;classification&#39;].isin(sources)]</span>
+<span class="c1">#        source_atoms = universe.atom[universe.atom[&#39;molecule&#39;].isin(source_molecules.index)]</span>
+<span class="c1">#    else:</span>
+<span class="c1">#        classif = [source for source in sources if source in classification]</span>
+<span class="c1">#        syms = [source for source in sources if source in symbols]</span>
+<span class="c1">#        lbls = [source for source in sources if source in labels]</span>
+<span class="c1">#        source_molecules = universe.molecule[universe.molecule[&#39;classification&#39;].isin(classif)]</span>
+<span class="c1">#        source_atoms = universe.atom[universe.atom[&#39;molecule&#39;].isin(source_molecules.index)]</span>
+<span class="c1">#        if len(syms) &gt; 0:</span>
+<span class="c1">#            source_atoms = source_atoms[source_atoms[&#39;symbol&#39;].isin(syms)]</span>
+<span class="c1">#        if len(lbls) &gt; 0:</span>
+<span class="c1">#            source_atoms = source_atoms[source_atoms[&#39;label&#39;].isin(lbls)]</span>
+<span class="c1">#    other_molecules = universe.molecule[~universe.molecule.index.isin(source_molecules.index)]</span>
+<span class="c1">#    other_atoms = universe.atom[~universe.atom.index.isin(source_atoms.index)]</span>
+<span class="c1">#    if restrictions is not None:</span>
+<span class="c1">#        if all(other in labels for other in restrictions):</span>
+<span class="c1">#            other_atoms = other_atoms[other_atoms[&#39;label&#39;].isin(restrictions)]</span>
+<span class="c1">#            mdx = other_atoms[&#39;molecule&#39;].astype(np.int64)</span>
+<span class="c1">#            other_molecules = other_molecules[other_molecules.index.isin(mdx)]</span>
+<span class="c1">#        elif all(other in symbols for other in restrictions):</span>
+<span class="c1">#            other_atoms = other_atoms[other_atoms[&#39;symbol&#39;].isin(restrictions)]</span>
+<span class="c1">#            mdx = other_atoms[&#39;molecule&#39;].astype(np.int64)</span>
+<span class="c1">#            other_molecules = other_molecules[other_molecules.index.isin(mdx)]</span>
+<span class="c1">#        elif all(other in classification for other in restrictions):</span>
+<span class="c1">#            other_molecules = other_molecules[other_molecules[&#39;classification&#39;].isin(restrictions)]</span>
+<span class="c1">#            other_atoms = other_atom[other_atoms[&#39;molecule&#39;].isin(other_molecules.index)]</span>
+<span class="c1">#        else:</span>
+<span class="c1">#            classif = [other for other in restrictions if other in classification]</span>
+<span class="c1">#            syms = [other for other in restrictions if other in symbols]</span>
+<span class="c1">#            lbls = [other for other in restrictions if other in labels]</span>
+<span class="c1">#            other_molecules = other_molecules[other_molecules[&#39;classification&#39;].isin(classif)]</span>
+<span class="c1">#            other_atoms = other_atoms[other_atoms[&#39;molecule&#39;].isin(other_molecules.index)]</span>
+<span class="c1">#            if len(syms) &gt; 0:</span>
+<span class="c1">#                other_atoms = other_atoms[other_atoms[&#39;symbol&#39;].isin(syms)]</span>
+<span class="c1">#            if len(lbls) &gt; 0:</span>
+<span class="c1">#                other_atoms = other_atoms[other_atoms[&#39;label&#39;].isin(lbls)]</span>
+<span class="c1">#    if del_label:</span>
+<span class="c1">#        del universe.atom[&#39;label&#39;]</span>
+<span class="c1">#    return source_atoms, other_atoms, source_molecules, other_molecules, n</span>
+<span class="c1">#</span>
+<span class="c1">#</span>
+<span class="c1">#def _compute_neighbors_by_atom(universe, source_atoms, other_atoms, source_molecules):</span>
+<span class="c1">#    &quot;&quot;&quot;</span>
+<span class="c1">#    &quot;&quot;&quot;</span>
+<span class="c1">#    universe.atom_two._revert_categories()</span>
+<span class="c1">#    two = universe.atom_two.loc[(universe.atom_two[&#39;atom0&#39;].isin(source_atoms.index.values) &amp;</span>
+<span class="c1">#                                 universe.atom_two[&#39;atom1&#39;].isin(other_atoms.index.values)) |</span>
+<span class="c1">#                                (universe.atom_two[&#39;atom1&#39;].isin(source_atoms.index.values) &amp;</span>
+<span class="c1">#                                 universe.atom_two[&#39;atom0&#39;].isin(other_atoms.index.values)),</span>
+<span class="c1">#                                [&#39;atom0&#39;, &#39;atom1&#39;, &#39;dr&#39;, &#39;frame&#39;]].sort_values(&#39;dr&#39;)</span>
+<span class="c1">#    mapper = universe.atom[&#39;molecule&#39;].astype(np.int64)</span>
+<span class="c1">#    groups = two[&#39;atom0&#39;].map(mapper).to_frame()</span>
+<span class="c1">#    groups.columns = [&#39;molecule0&#39;]</span>
+<span class="c1">#    groups[&#39;molecule1&#39;] = two[&#39;atom1&#39;].map(mapper)</span>
+<span class="c1">#    groups[&#39;frame&#39;] = two[&#39;frame&#39;]</span>
+<span class="c1">#    universe.atom_two._set_categories()</span>
+<span class="c1">#    groups = groups.groupby(&#39;frame&#39;)</span>
+<span class="c1">#    n = groups.ngroups</span>
+<span class="c1">#    ordered_molecules = np.empty((n, ), dtype=np.ndarray)</span>
+<span class="c1">#    ordered_twos = np.empty((n, ), dtype=np.ndarray)</span>
+<span class="c1">#    for i, (frame, group) in enumerate(groups):</span>
+<span class="c1">#        series = group[[&#39;molecule0&#39;, &#39;molecule1&#39;]].stack().drop_duplicates().reset_index(level=1, drop=True)</span>
+<span class="c1">#        series = series[~series.isin(source_molecules.index)]</span>
+<span class="c1">#        ordered_molecules[i] = series.values</span>
+<span class="c1">#        ordered_twos[i] = series.index.values</span>
+<span class="c1">#    return ordered_molecules, ordered_twos</span>
+<span class="c1">#</span>
+<span class="c1">#</span>
+<span class="c1">#def _compute_neighbors_by_com(universe, source_molecules, other_molecules):</span>
+<span class="c1">#    &quot;&quot;&quot;</span>
+<span class="c1">#    &quot;&quot;&quot;</span>
+<span class="c1">#    raise NotImplementedError()</span>
+<span class="c1">#</span>
+<span class="c1">#</span>
+<span class="c1">#def _build_free_universe(universe, ordered_molecules, ordered_twos, n,</span>
+<span class="c1">#                         source_atoms, source_molecules):</span>
+<span class="c1">#    &quot;&quot;&quot;</span>
+<span class="c1">#    &quot;&quot;&quot;</span>
+<span class="c1">#    molecule = np.concatenate([mcules[:n] for mcules in ordered_molecules])</span>
+<span class="c1">#    molecule = np.concatenate((molecule, source_molecules.index.tolist()))</span>
+<span class="c1">#    molecule = universe.molecule[universe.molecule.index.isin(molecule)].copy()</span>
+<span class="c1">#    atom = universe.atom[universe.atom[&#39;molecule&#39;].isin(molecule.index)].copy()</span>
+<span class="c1">#    atom_two = universe.atom_two[(universe.atom_two[&#39;atom0&#39;].isin(atom.index) &amp;</span>
+<span class="c1">#                                  universe.atom_two[&#39;atom1&#39;].isin(atom.index))].copy()</span>
+<span class="c1">#    frame = universe.frame[universe.frame.index.isin(atom[&#39;frame&#39;])].copy()</span>
+<span class="c1">#    frame[&#39;periodic&#39;] = False</span>
+<span class="c1">#    uni = universe.__class__(atom=atom, molecule=molecule, frame=frame, atom_two=atom_two)</span>
+<span class="c1">##    if universe.frame.is_periodic():</span>
+<span class="c1">##        uni.atom.update(universe.visual_atom)</span>
+<span class="c1">##        if &#39;cx&#39; not in uni.molecule.columns:</span>
+<span class="c1">##            uni.compute_molecule_com()</span>
+<span class="c1">##        uni.atom._revert_categories()</span>
+<span class="c1">##        mapper = uni.atom.drop_duplicates(&#39;molecule&#39;).set_index(&#39;molecule&#39;)[&#39;frame&#39;]</span>
+<span class="c1">##        uni.atom._set_categories()</span>
+<span class="c1">##        uni.molecule[&#39;frame&#39;] = uni.molecule.index.map(lambda x: mapper[x])</span>
+<span class="c1">##        sources = source_atoms.groupby(&#39;frame&#39;)</span>
+<span class="c1">##        groups = uni.molecule.groupby(&#39;frame&#39;)</span>
+<span class="c1">##        n = groups.ngroups</span>
+<span class="c1">##        dx = np.empty((n, ), dtype=np.ndarray)</span>
+<span class="c1">##        dy = np.empty((n, ), dtype=np.ndarray)</span>
+<span class="c1">##        dz = np.empty((n, ), dtype=np.ndarray)</span>
+<span class="c1">##        index = np.empty((n, ), dtype=np.ndarray)</span>
+<span class="c1">##        for i, (frame, group) in enumerate(groups):</span>
+<span class="c1">##            cx = group[&#39;cx&#39;].values</span>
+<span class="c1">##            cy = group[&#39;cy&#39;].values</span>
+<span class="c1">##            cz = group[&#39;cz&#39;].values</span>
+<span class="c1">##            ccx, ccy, ccz = sources.get_group(frame)[[&#39;x&#39;, &#39;y&#39;, &#39;z&#39;]].mean().values</span>
+<span class="c1">##    #        ccx, ccy, ccz = mcules.ix[mcules[&#39;classification&#39;] == &#39;solute&#39;, [&#39;cx&#39;, &#39;cy&#39;, &#39;cz&#39;]].values[0]</span>
+<span class="c1">##            rx, ry, rz = uni.frame.ix[frame, [&#39;rx&#39;, &#39;ry&#39;, &#39;rz&#39;]].values</span>
+<span class="c1">##            dxf, dyf, dzf = _compute(cx, cy, cz, rx, ry, rz, ccx, ccy, ccz)</span>
+<span class="c1">##            dx[i] = dxf</span>
+<span class="c1">##            dy[i] = dyf</span>
+<span class="c1">##            dz[i] = dzf</span>
+<span class="c1">##            index[i] = group.index.values</span>
+<span class="c1">##        del uni.molecule[&#39;frame&#39;]</span>
+<span class="c1">##        dx = np.concatenate(dx)</span>
+<span class="c1">##        dy = np.concatenate(dy)</span>
+<span class="c1">##        dz = np.concatenate(dz)</span>
+<span class="c1">##        index = np.concatenate(index)</span>
+<span class="c1">##        df = pd.DataFrame.from_dict({&#39;x&#39;: dx, &#39;y&#39;: dy, &#39;z&#39;: dz, &#39;molecule&#39;: index})</span>
+<span class="c1">##        df.set_index(&#39;molecule&#39;, inplace=True)</span>
+<span class="c1">##        for molecule in df.index:</span>
+<span class="c1">##            dx, dy, dz = df.ix[molecule].values</span>
+<span class="c1">##            uni.atom.ix[uni.atom[&#39;molecule&#39;] == molecule, &#39;x&#39;] += dx</span>
+<span class="c1">##            uni.atom.ix[uni.atom[&#39;molecule&#39;] == molecule, &#39;y&#39;] += dy</span>
+<span class="c1">##            uni.atom.ix[uni.atom[&#39;molecule&#39;] == molecule, &#39;z&#39;] += dz</span>
+<span class="c1">#    return uni</span>
+<span class="c1">#</span>
+<span class="c1">#</span>
+<span class="c1">#def _build_universe(universe, ordered_molecules, ordered_twos, n):</span>
+<span class="c1">#    &quot;&quot;&quot;</span>
+<span class="c1">#    &quot;&quot;&quot;</span>
+<span class="c1">#    raise NotImplementedError()</span>
+<span class="c1">#    # TODO CONVERT TO A GENERIC AND COMPLETE SLICER</span>
+<span class="c1">##    molecules = np.concatenate([m[:n] for m in ordered_molecules])</span>
+<span class="c1">##    twos = np.concatenate([t[:n] for t in ordered_twos])</span>
+<span class="c1">##    atom = universe.atom[universe.atom[&#39;molecule&#39;].isin(molecules)].copy().sort_index()</span>
+<span class="c1">##    two = universe.atom_two[universe.atom_two[&#39;atom0&#39;].isin(atom.index) &amp;</span>
+<span class="c1">##                            universe.atom_two[&#39;atom1&#39;].isin(atom.index)].copy().sort_index()</span>
+<span class="c1">##    projected_atom = universe.projected_atom.ix[two.index.values].copy().sort_index()</span>
+<span class="c1">##    visual_atom = universe.visual_atom.ix[atom.index].copy().sort_index()</span>
+<span class="c1">##    molecule = universe.molecule.ix[molecules].copy().sort_index()</span>
+<span class="c1">##    frame = universe.frame.copy().sort_index()</span>
+<span class="c1">##    uni = Universe(atom=atom, atom_two=two, molecule=molecule, frame=frame,</span>
+<span class="c1">##                   visual_atom=visual_atom, projected_atom=projected_atom)</span>
+<span class="c1">##    return uni</span>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright .
+      Last updated on Apr 12, 2018.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'0.3.11',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          
+          SphinxRtdTheme.Navigation.enableSticky();
+          
+      });
+  </script> 
+
+</body>
+</html>

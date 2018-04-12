@@ -1,0 +1,341 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>An Introduction to exatomic &mdash; exatomic 0.3.11 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Welcome to exatomic" href="01_basics.html" />
+    <link rel="prev" title="Getting Started" href="../started.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> exatomic
+          
+
+          
+            
+            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.3.11
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install.html#anaconda">Anaconda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install.html#pypi">Pypi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install.html#repository">Repository</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install.html#what-s-next">What’s Next?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install.html#note">Note</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../started.html">Getting Started</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">An Introduction to exatomic</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#Basics-of-exatomic">Basics of exatomic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#XYZ-Tutorial">XYZ Tutorial</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Visualization-of-Molecular-Orbitals">Visualization of Molecular Orbitals</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="01_basics.html">Welcome to exatomic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_xyz.html">XYZ Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03_orbitals.html">Visualize Orbitals</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">General</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../api/index.html">User Docs</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Examples</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="water-demo.html">Import</a></li>
+<li class="toctree-l1"><a class="reference internal" href="water-demo.html#Parse-Test-Data">Parse Test Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="water-demo.html#Construct-a-Periodic-Universe-(by-hand)">Construct a Periodic Universe (by hand)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="water-demo.html#Compute-Distances-Between-Atoms">Compute Distances Between Atoms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="water-demo.html#Visualize-Trajectory-(press-play-multiple-times-to-speed-up-framerate)">Visualize Trajectory (press play multiple times to speed up framerate)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nwchem.html">NWChem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="qe.html">Support for Quantum ESPRESSO in exatomic</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Software</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../software/adf.html">ADF</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../software/gaussian.html">Gaussian</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../software/molcas.html">Molcas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../software/nbo.html">NBO</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../software/nwchem.html">NWChem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../software/qe.html">Quantum ESPRESSO</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contributors</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../contrib.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts.html">Development</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">exatomic</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../started.html">Getting Started</a> &raquo;</li>
+        
+      <li>An Introduction to exatomic</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/notebooks/00_index.ipynb.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast,
+.nboutput.nblast {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast + .nbinput {
+    margin-top: -19px;
+}
+
+/* nice headers on first paragraph of info/warning boxes */
+.admonition .first {
+    margin: -12px;
+    padding: 6px 12px;
+    margin-bottom: 12px;
+    color: #fff;
+    line-height: 1;
+    display: block;
+}
+.admonition.warning .first {
+    background: #f0b37e;
+}
+.admonition.note .first {
+    background: #6ab0de;
+}
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+</style>
+<div class="section" id="An-Introduction-to-exatomic">
+<h1>An Introduction to exatomic<a class="headerlink" href="#An-Introduction-to-exatomic" title="Permalink to this headline">¶</a></h1>
+<p>Exatomic is a package that facilitates data analysis for computational
+chemistry.</p>
+<p>Key features of exatomic include: - Parsing of quantum chemistry
+software output - Visualization of molecules, orbitals - Dataframe based
+data organization</p>
+<div class="section" id="Basics-of-exatomic">
+<h2><a class="reference external" href="source/notebooks/01_basics.ipynb">Basics of exatomic</a><a class="headerlink" href="#Basics-of-exatomic" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Tutorial of basic usage and syntax</li>
+<li>Demonstrates how to load/manipulate dataframe data</li>
+</ul>
+</div>
+<div class="section" id="XYZ-Tutorial">
+<h2><a class="reference external" href="source/notebooks/02_xyz.ipynb">XYZ Tutorial</a><a class="headerlink" href="#XYZ-Tutorial" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Load an XYZ trajectory</li>
+<li>Visualize the structure</li>
+<li>Examine basic data objects associated with/derived from the structure</li>
+</ul>
+</div>
+<div class="section" id="Visualization-of-Molecular-Orbitals">
+<h2><a class="reference external" href="source/notebooks/03_orbitals.ipynb">Visualization of Molecular Orbitals</a><a class="headerlink" href="#Visualization-of-Molecular-Orbitals" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Tutorial on parsing data from wave function theory software</li>
+<li>Visualization of molecular orbitals</li>
+<li>Computation of overlap, density matrix, and other manipulations
+stemming from the basis set, order, and coefficient matrix</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="01_basics.html" class="btn btn-neutral float-right" title="Welcome to exatomic" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../started.html" class="btn btn-neutral" title="Getting Started" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright .
+      Last updated on Apr 12, 2018.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.3.11',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          
+          SphinxRtdTheme.Navigation.enableSticky();
+          
+      });
+  </script> 
+
+</body>
+</html>

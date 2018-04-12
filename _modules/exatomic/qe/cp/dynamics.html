@@ -1,0 +1,833 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>exatomic.qe.cp.dynamics &mdash; exatomic 0.3.11 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" /> 
+
+  
+  <script src="../../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> exatomic
+          
+
+          
+            
+            <img src="../../../../_static/logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.3.11
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../install.html#anaconda">Anaconda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../install.html#pypi">Pypi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../install.html#repository">Repository</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../install.html#what-s-next">What’s Next?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../install.html#note">Note</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../started.html">Getting Started</a></li>
+</ul>
+<p class="caption"><span class="caption-text">General</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../api/index.html">User Docs</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Examples</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../notebooks/water-demo.html">Import</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../notebooks/water-demo.html#Parse-Test-Data">Parse Test Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../notebooks/water-demo.html#Construct-a-Periodic-Universe-(by-hand)">Construct a Periodic Universe (by hand)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../notebooks/water-demo.html#Compute-Distances-Between-Atoms">Compute Distances Between Atoms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../notebooks/water-demo.html#Visualize-Trajectory-(press-play-multiple-times-to-speed-up-framerate)">Visualize Trajectory (press play multiple times to speed up framerate)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../notebooks/nwchem.html">NWChem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../notebooks/qe.html">Support for Quantum ESPRESSO in exatomic</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Software</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../software/adf.html">ADF</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../software/gaussian.html">Gaussian</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../software/molcas.html">Molcas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../software/nbo.html">NBO</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../software/nwchem.html">NWChem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../software/qe.html">Quantum ESPRESSO</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contributors</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../contrib.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../concepts.html">Development</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">exatomic</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../../index.html">Module code</a> &raquo;</li>
+        
+      <li>exatomic.qe.cp.dynamics</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for exatomic.qe.cp.dynamics</h1><div class="highlight"><pre>
+<span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="c1"># Copyright (c) 2015-2018, Exa Analytics Development Team</span>
+<span class="c1"># Distributed under the terms of the Apache License 2.0</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">QE cp.x Molecular Dynamics</span>
+<span class="sd">###############################</span>
+<span class="sd">Functionality related to parsing inputs and outputs generated when running QE&#39;s</span>
+<span class="sd">cp.x module. Data files that come from dynamics include evp, for, pos, etc.</span>
+<span class="sd">Since these files are CSV-like files, and typically large, CSV reading functions,</span>
+<span class="sd">rather than :class:`~exa.core.editor.Editor` objects are used to parse in the</span>
+<span class="sd">data.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">bz2</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">numba</span> <span class="k">as</span> <span class="nn">nb</span>
+
+
+<span class="nd">@nb</span><span class="o">.</span><span class="n">jit</span><span class="p">(</span><span class="n">nopython</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">nogil</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">parallel</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">construct_fdx</span><span class="p">(</span><span class="n">fdxs</span><span class="p">,</span> <span class="n">size</span><span class="p">):</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">fdxs</span><span class="p">)</span><span class="o">*</span><span class="n">size</span>
+    <span class="n">frame</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="n">n</span><span class="p">,</span> <span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int64</span><span class="p">)</span>
+    <span class="n">k</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">fdx</span> <span class="ow">in</span> <span class="n">fdxs</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">size</span><span class="p">):</span>
+            <span class="n">frame</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">fdx</span>
+            <span class="n">k</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">frame</span>
+
+
+<div class="viewcode-block" id="parse_symbols_from_input"><a class="viewcode-back" href="../../../../software/qe.html#exatomic.qe.cp.dynamics.parse_symbols_from_input">[docs]</a><span class="k">def</span> <span class="nf">parse_symbols_from_input</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    The only way to get the symbols, in the correct order, is</span>
+<span class="sd">    by parsing them from an input file.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">reader</span><span class="p">(</span><span class="n">f</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Helper function that performs the parsing.&quot;&quot;&quot;</span>
+        <span class="n">read</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">order</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">symbols</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="o">.</span><span class="n">readlines</span><span class="p">():</span>
+            <span class="k">if</span> <span class="sa">b</span><span class="s2">&quot;atomic_species&quot;</span> <span class="ow">in</span> <span class="n">line</span><span class="o">.</span><span class="n">lower</span><span class="p">():</span>
+                <span class="n">read</span> <span class="o">=</span> <span class="mi">1</span>
+                <span class="k">continue</span>
+            <span class="k">if</span> <span class="sa">b</span><span class="s2">&quot;atomic_positions&quot;</span> <span class="ow">in</span> <span class="n">line</span><span class="o">.</span><span class="n">lower</span><span class="p">():</span>
+                <span class="n">read</span> <span class="o">=</span> <span class="mi">2</span>
+                <span class="k">continue</span>
+            <span class="k">if</span> <span class="n">read</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="n">order</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">))</span>
+            <span class="k">if</span> <span class="n">read</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+                <span class="n">symbols</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">))</span>
+        <span class="n">order</span> <span class="o">=</span> <span class="p">{</span><span class="n">v</span><span class="p">:</span> <span class="n">k</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">enumerate</span><span class="p">(</span><span class="n">order</span><span class="p">))</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+        <span class="n">symbols</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">from_dict</span><span class="p">({</span><span class="s1">&#39;symbol&#39;</span><span class="p">:</span> <span class="n">symbols</span><span class="p">})</span>
+        <span class="n">symbols</span><span class="p">[</span><span class="s1">&#39;order&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">[</span><span class="s1">&#39;symbol&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">order</span><span class="p">)</span>
+        <span class="n">symbols</span> <span class="o">=</span> <span class="n">symbols</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">&quot;order&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">symbols</span>
+    <span class="k">if</span> <span class="n">path</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;bz2&quot;</span><span class="p">):</span>
+        <span class="k">with</span> <span class="n">bz2</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">reader</span><span class="p">(</span><span class="n">f</span><span class="p">)[</span><span class="s1">&#39;symbol&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">reader</span><span class="p">(</span><span class="n">f</span><span class="p">)[</span><span class="s1">&#39;symbol&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="parse_evp"><a class="viewcode-back" href="../../../../software/qe.html#exatomic.qe.cp.dynamics.parse_evp">[docs]</a><span class="k">def</span> <span class="nf">parse_evp</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">symbols</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Parse in the EVP file using pandas.</span>
+
+<span class="sd">    If the ``columns`` argument is None, this function attempts to</span>
+<span class="sd">    determine if the column names are present otherwise uses defaults.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">dw</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;delim_whitespace&quot;</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+    <span class="n">skiprows</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;skiprows&quot;</span><span class="p">,</span> <span class="p">[])</span>
+    <span class="k">def</span> <span class="nf">parser</span><span class="p">(</span><span class="n">columns</span><span class="p">,</span> <span class="n">skiprows</span><span class="p">):</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="n">columns</span><span class="p">,</span> <span class="n">skiprows</span><span class="o">=</span><span class="n">skiprows</span><span class="p">,</span>
+                         <span class="n">delim_whitespace</span><span class="o">=</span><span class="n">dw</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="n">df</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">(</span><span class="n">columns</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">keep</span><span class="o">=</span><span class="s2">&quot;last&quot;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">how</span><span class="o">=</span><span class="s2">&quot;all&quot;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">df</span>
+
+    <span class="k">if</span> <span class="n">path</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;bz2&quot;</span><span class="p">):</span>
+        <span class="n">opener</span> <span class="o">=</span> <span class="n">bz2</span><span class="o">.</span><span class="n">open</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">opener</span> <span class="o">=</span> <span class="nb">open</span>
+    <span class="k">if</span> <span class="n">columns</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">with</span> <span class="n">opener</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">first</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span>
+            <span class="k">except</span><span class="p">:</span>
+                <span class="n">first</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">first</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;#&quot;</span><span class="p">):</span>
+            <span class="n">columns</span> <span class="o">=</span> <span class="n">first</span><span class="o">.</span><span class="n">split</span><span class="p">()[</span><span class="mi">1</span><span class="p">:]</span>
+            <span class="n">skiprows</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">columns</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">13</span><span class="p">))</span>
+            <span class="n">skiprows</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">return</span> <span class="n">parser</span><span class="p">(</span><span class="n">columns</span><span class="p">,</span> <span class="n">skiprows</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="parse_xyz"><a class="viewcode-back" href="../../../../software/qe.html#exatomic.qe.cp.dynamics.parse_xyz">[docs]</a><span class="k">def</span> <span class="nf">parse_xyz</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">symbols</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="s2">&quot;z&quot;</span><span class="p">),</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Parse XYZ-like files, pos, vel, for, using pandas.</span>
+
+<span class="sd">    Warning:</span>
+<span class="sd">        In certain cases using ``pandas.read_fwf`` may work better.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Parse in the data using pandas</span>
+    <span class="n">dw</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;delim_whitespace&quot;</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">delim_whitespace</span><span class="o">=</span><span class="n">dw</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="n">columns</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="c1"># The first line contains the frame number, isolate it</span>
+    <span class="n">fdxs</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="n">columns</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]]</span><span class="o">.</span><span class="n">isnull</span><span class="p">(),</span> <span class="n">columns</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
+    <span class="n">nat</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">fdxs</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">fdxs</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="c1"># And remove those lines from the xyz-like data</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">how</span><span class="o">=</span><span class="s2">&quot;any&quot;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="c1"># Construct the frame index</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;frame&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">construct_fdx</span><span class="p">(</span><span class="n">fdxs</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">),</span> <span class="n">nat</span><span class="p">)</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;frame&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;frame&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s2">&quot;category&quot;</span><span class="p">)</span>
+    <span class="c1"># and label so that we can deduplicate the data</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;label&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">symbols</span><span class="p">)))</span><span class="o">*</span><span class="nb">len</span><span class="p">(</span><span class="n">fdxs</span><span class="p">)</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;label&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;label&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s2">&quot;category&quot;</span><span class="p">)</span>
+    <span class="c1"># Drop duplicated data (typically due to simulation errors)</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">([</span><span class="s2">&quot;frame&quot;</span><span class="p">,</span> <span class="s2">&quot;label&quot;</span><span class="p">],</span> <span class="n">keep</span><span class="o">=</span><span class="s2">&quot;last&quot;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="c1"># Cleanup and add symbols</span>
+    <span class="k">del</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;label&#39;</span><span class="p">]</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;symbol&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">symbols</span><span class="o">*</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;frame&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;symbol&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;symbol&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s2">&quot;category&quot;</span><span class="p">)</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">df</span></div>
+
+
+
+
+
+
+
+
+
+<span class="c1">#import os</span>
+<span class="c1">#from xml.etree import ElementTree</span>
+<span class="c1">#import numpy as np</span>
+<span class="c1">#import pandas as pd</span>
+<span class="c1">#from linecache import getline</span>
+<span class="c1">#from operator import itemgetter</span>
+<span class="c1">#from exa.utility import mkp</span>
+<span class="c1">#from exa.math.misc.indexing import starts_count</span>
+<span class="c1">#from exa.relational.unit import Time</span>
+<span class="c1">#from exatomic.atom import Atom</span>
+<span class="c1">#from exatomic.frame import Frame</span>
+<span class="c1">#from exatomic.container import Universe</span>
+<span class="c1">#from exatomic.qe.cp.error import CPException</span>
+<span class="c1">#</span>
+<span class="c1">#</span>
+<span class="c1">## Default columns</span>
+<span class="c1">#evp_cols = (&#39;step&#39;, &#39;electronic_kinetic_energy&#39;, &#39;cell_temperature&#39;, &#39;atom_temperature&#39;,</span>
+<span class="c1">#            &#39;energy&#39;, &#39;enthalpy&#39;, &#39;conserved_energy&#39;, &#39;constant_of_motion&#39;, &#39;cell_volume&#39;,</span>
+<span class="c1">#            &#39;cell_pressure&#39;, &#39;time&#39;)</span>
+<span class="c1">#nos_cols = (&#39;step&#39;, &#39;nose_e1&#39;, &#39;nose_e2&#39;, &#39;nose_n1&#39;, &#39;nose_n2&#39;, &#39;time&#39;)</span>
+<span class="c1">#eig_cols = range(10)</span>
+<span class="c1">#</span>
+<span class="c1">#</span>
+<span class="c1">#def parse_dynamics_dir(path):</span>
+<span class="c1">#    &quot;&quot;&quot;</span>
+<span class="c1">#    Parse a molecular dynamics simulation given the &quot;outdir&quot;.</span>
+<span class="c1">#</span>
+<span class="c1">#    Args:</span>
+<span class="c1">#        path (str): Location of QE&#39;s output directory (&quot;outdir&quot;)</span>
+<span class="c1">#</span>
+<span class="c1">#    Returns:</span>
+<span class="c1">#        universe (:class:`~atomic.universe.Universe`): An atomic universe</span>
+<span class="c1">#    &quot;&quot;&quot;</span>
+<span class="c1">#    save_dirs = get_save_dirs(path)</span>
+<span class="c1">#    if len(save_dirs) == 0:</span>
+<span class="c1">#        raise CPException(&#39;No .save directory in path {}.&#39;.format(path))</span>
+<span class="c1">#    prefix = save_dirs[0].split(&#39;_&#39;)[0]</span>
+<span class="c1">#    data = parse_datafile(mkp(path, save_dirs[0]))</span>
+<span class="c1">#    symbols = data[&#39;symbols&#39;]</span>
+<span class="c1">#    nat = len(symbols)</span>
+<span class="c1">#    atom = create_atom(path, prefix, symbols)</span>
+<span class="c1">#    frame = create_frame(path, prefix, nat)</span>
+<span class="c1">#    meta = {&#39;path&#39;: path, &#39;prefix&#39;: prefix, &#39;program&#39;: &#39;qe&#39;}</span>
+<span class="c1">#    return Universe(name=prefix, description=path, atom=atom, frame=frame,</span>
+<span class="c1">#                    meta=meta)</span>
+<span class="c1">#</span>
+<span class="c1">#</span>
+<span class="c1">#def get_save_dirs(path):</span>
+<span class="c1">#    &quot;&quot;&quot;</span>
+<span class="c1">#    Find the save directories in a given path.</span>
+<span class="c1">#</span>
+<span class="c1">#    Args:</span>
+<span class="c1">#        path (str): Output directory path</span>
+<span class="c1">#</span>
+<span class="c1">#    Returns:</span>
+<span class="c1">#        dirs (list): List of save directories</span>
+<span class="c1">#    &quot;&quot;&quot;</span>
+<span class="c1">#    return [p for p in os.listdir(path) if os.path.isdir(mkp(path, p)) and &#39;save&#39; in p]</span>
+<span class="c1">#</span>
+<span class="c1">#</span>
+<span class="c1">#def parse_datafile(save_dir):</span>
+<span class="c1">#    &quot;&quot;&quot;</span>
+<span class="c1">#    Parses the standand data-file.xml output file from cp.x calculations.</span>
+<span class="c1">#</span>
+<span class="c1">#    Args:</span>
+<span class="c1">#        save_dir (str): Save directory path</span>
+<span class="c1">#</span>
+<span class="c1">#    Returns:</span>
+<span class="c1">#        d (dict): Dictionary of parsed data key, value pairs</span>
+<span class="c1">#    &quot;&quot;&quot;</span>
+<span class="c1">#    od = None</span>
+<span class="c1">#    xmlpath = mkp(save_dir, &quot;data-file.xml&quot;)</span>
+<span class="c1">#    ions = ElementTree(xmlpath).getroot().getchildren()[4]</span>
+<span class="c1">#    symbols = [atom.get(&quot;SPECIES&quot;) for atom in ions.getchildren() if &#39;ATOM.&#39; in str(atom)]</span>
+<span class="c1">#    order = dict(enumerate(set(symbols)))</span>
+<span class="c1">#    #ntype = len(set(symbols))</span>
+<span class="c1">#    #with open(mkp(save_dir, &#39;data-file.xml&#39;), &#39;rb&#39;) as f:</span>
+<span class="c1">#    #    od = xmltodict.parse(f)</span>
+<span class="c1">#    #symbols = [od[&#39;Root&#39;][&#39;IONS&#39;][sym][&#39;@SPECIES&#39;].strip() for sym in od[&#39;Root&#39;][&#39;IONS&#39;].keys() if &#39;ATOM.&#39; in sym ]</span>
+<span class="c1">#    #ntype = int(od[&#39;Root&#39;][&#39;IONS&#39;][&#39;NUMBER_OF_SPECIES&#39;][&#39;#text&#39;])</span>
+<span class="c1">#    #order = {}</span>
+<span class="c1">#    #for i, j in enumerate(range(1, ntype + 1)):</span>
+<span class="c1">#    #    order[od[&#39;Root&#39;][&#39;IONS&#39;][&#39;SPECIE.&#39; + str(j)][&#39;ATOM_TYPE&#39;][&#39;#text&#39;]] = i</span>
+<span class="c1">#    #symbols = [(sym, order[sym]) for sym in symbols]</span>
+<span class="c1">#    #symbols = [sym[0] for sym in sorted(symbols, key=itemgetter(1))]</span>
+<span class="c1">#    return {&#39;symbols&#39;: symbols, &#39;order&#39;: order};</span>
+<span class="c1">#</span>
+<span class="c1">#</span>
+<span class="c1">#def parse_ijk(path, columns, include_frame=False):</span>
+<span class="c1">#    &quot;&quot;&quot;</span>
+<span class="c1">#    Generic parser for pos, for, and vel files.</span>
+<span class="c1">#</span>
+<span class="c1">#    Args:</span>
+<span class="c1">#        path (str): File path</span>
+<span class="c1">#        columns (list): Header</span>
+<span class="c1">#        include_frame (bool): Include the frame index (default: false)</span>
+<span class="c1">#</span>
+<span class="c1">#    Returns:</span>
+<span class="c1">#        df (:pandas:`~pandas.DataFrame`): Atom-like dataframe</span>
+<span class="c1">#    &quot;&quot;&quot;</span>
+<span class="c1">#    fcol = columns[0]</span>
+<span class="c1">#    lcol = columns[-1]</span>
+<span class="c1">#    df = pd.read_csv(path, delim_whitespace=True, names=columns)</span>
+<span class="c1">#    step = df[df[lcol].isnull()]</span>
+<span class="c1">#    starts = step.drop_duplicates(fcol, keep=&#39;last&#39;).index.values + 1</span>
+<span class="c1">#    nframes = len(step)</span>
+<span class="c1">#    nat = np.min(starts[1:] - starts[:-1]) - 1</span>
+<span class="c1">#    frame, label, indices = starts_count(starts, nat)</span>
+<span class="c1">#    frame = pd.Series(frame, dtype=&#39;category&#39;)</span>
+<span class="c1">#    df = df[df.index.isin(indices)].reset_index(drop=True)</span>
+<span class="c1">#    if include_frame:</span>
+<span class="c1">#        df[&#39;frame&#39;] = frame</span>
+<span class="c1">#    return df</span>
+<span class="c1">#</span>
+<span class="c1">#</span>
+<span class="c1">#def parse_pos(*args, **kwargs):</span>
+<span class="c1">#    &quot;&quot;&quot;</span>
+<span class="c1">#    Parse the positions output file into a dataframe</span>
+<span class="c1">#    &quot;&quot;&quot;</span>
+<span class="c1">#    return parse_ijk(*args, columns=(&#39;x&#39;, &#39;y&#39;, &#39;z&#39;), **kwargs)</span>
+<span class="c1">#</span>
+<span class="c1">#def parse_vel(*args, **kwargs):</span>
+<span class="c1">#    &quot;&quot;&quot;</span>
+<span class="c1">#    Parse the positions output file into a dataframe</span>
+<span class="c1">#    &quot;&quot;&quot;</span>
+<span class="c1">#    return parse_ijk(*args, columns=(&#39;vx&#39;, &#39;vy&#39;, &#39;vz&#39;), **kwargs)</span>
+<span class="c1">#</span>
+<span class="c1">#</span>
+<span class="c1">#def parse_evp(path, columns=evp_cols):</span>
+<span class="c1">#    &quot;&quot;&quot;</span>
+<span class="c1">#    Parse in electronic, volume, and pressure data.</span>
+<span class="c1">#</span>
+<span class="c1">#    Args:</span>
+<span class="c1">#        columns (array-list): Array of string column names</span>
+<span class="c1">#</span>
+<span class="c1">#    Returns:</span>
+<span class="c1">#        evpdf (:class:`~pandas.DataFrame`): Pandas DataFrame containing evp file data</span>
+<span class="c1">#    &quot;&quot;&quot;</span>
+<span class="c1">#    header = getline(path, 1)</span>
+<span class="c1">#    skiprows = []</span>
+<span class="c1">#    if &#39;#&#39; in header:</span>
+<span class="c1">#        columns = header[1:].split()</span>
+<span class="c1">#        skiprows = [0]</span>
+<span class="c1">#    df = pd.read_csv(path, delim_whitespace=True, names=columns, skiprows=skiprows)</span>
+<span class="c1">#    df.drop_duplicates(df.columns[0], keep=&#39;last&#39;, inplace=True)</span>
+<span class="c1">#    df.dropna(how=&#39;all&#39;, axis=1, inplace=True)</span>
+<span class="c1">#    df.reset_index(drop=True, inplace=True)</span>
+<span class="c1">#    return df</span>
+<span class="c1">#</span>
+<span class="c1">#</span>
+<span class="c1">#def parse_nos(path, columns=nos_cols):</span>
+<span class="c1">#    &quot;&quot;&quot;</span>
+<span class="c1">#    Read in thermostat information.</span>
+<span class="c1">#    &quot;&quot;&quot;</span>
+<span class="c1">#    df = pd.read_csv(path, delim_whitespace=True, names=columns)</span>
+<span class="c1">#    df.drop_duplicates(df.columns[0], inplace=True, keep=&#39;last&#39;)</span>
+<span class="c1">#    df.reset_index(drop=True, inplace=True)</span>
+<span class="c1">#    return df</span>
+<span class="c1">#</span>
+<span class="c1">#</span>
+<span class="c1">#def parse_cel(path):</span>
+<span class="c1">#    &quot;&quot;&quot;</span>
+<span class="c1">#    Parse cell dimensions.</span>
+<span class="c1">#    &quot;&quot;&quot;</span>
+<span class="c1">#    df = pd.read_csv(path, delim_whitespace=True, names=(&#39;i&#39;, &#39;j&#39;, &#39;k&#39;))</span>
+<span class="c1">#    starts = df[::4].drop_duplicates(df.columns[0], keep=&#39;last&#39;).index.values + 1</span>
+<span class="c1">#    frame, label, indices = starts_count(starts, 3)</span>
+<span class="c1">#    df = df[df.index.isin(indices)].reset_index(drop=True)</span>
+<span class="c1">#    df[&#39;frame&#39;] = pd.Series(frame, dtype=&#39;category&#39;)</span>
+<span class="c1">#    df[&#39;label&#39;] = pd.Series(label, dtype=&#39;category&#39;)</span>
+<span class="c1">#    df = df.pivot(&#39;frame&#39;, &#39;label&#39;)</span>
+<span class="c1">#    df.columns = [&#39;xi&#39;, &#39;xj&#39;, &#39;xk&#39;, &#39;yi&#39;, &#39;yj&#39;, &#39;yk&#39;, &#39;zi&#39;, &#39;zj&#39;, &#39;zk&#39;]</span>
+<span class="c1">#    df[&#39;ox&#39;] = 0.0</span>
+<span class="c1">#    df[&#39;oy&#39;] = 0.0</span>
+<span class="c1">#    df[&#39;oz&#39;] = 0.0</span>
+<span class="c1">#    df.index.names = [None]</span>
+<span class="c1">#    return df</span>
+<span class="c1">#</span>
+<span class="c1">#</span>
+<span class="c1">#def create_atom(path, prefix, symbols):</span>
+<span class="c1">#    &quot;&quot;&quot;</span>
+<span class="c1">#    Create a :class:`~atomic.atom.Atom`.</span>
+<span class="c1">#    &quot;&quot;&quot;</span>
+<span class="c1">#    df1 = parse_pos(mkp(path, prefix + &#39;.pos&#39;), include_frame=True)</span>
+<span class="c1">#    df2 = parse_vel(mkp(path, prefix + &#39;.vel&#39;), include_frame=False)</span>
+<span class="c1">#    n = len(df1) // len(symbols)</span>
+<span class="c1">#    df1[&#39;symbol&#39;] = pd.Series(symbols * n, dtype=&#39;category&#39;)</span>
+<span class="c1">#    df1[&#39;vx&#39;] = df2[&#39;vx&#39;]</span>
+<span class="c1">#    df1[&#39;vy&#39;] = df2[&#39;vy&#39;]</span>
+<span class="c1">#    df1[&#39;vz&#39;] = df2[&#39;vz&#39;]</span>
+<span class="c1">#    df1.dropna(axis=0, how=&#39;any&#39;, inplace=True)</span>
+<span class="c1">#    return Atom(df1)</span>
+<span class="c1">#</span>
+<span class="c1">#</span>
+<span class="c1">#def create_frame(path, prefix, nat, evp_cols=evp_cols, nos_cols=nos_cols):</span>
+<span class="c1">#    &quot;&quot;&quot;</span>
+<span class="c1">#    Create a :class:`~atomic.frame.Frame` from dynamics data.</span>
+<span class="c1">#</span>
+<span class="c1">#    Args:</span>
+<span class="c1">#        path (str): Directory path</span>
+<span class="c1">#        prefix (str): Output file prefix</span>
+<span class="c1">#        nat (int): Number of atoms per frame</span>
+<span class="c1">#        evp_cols (list): Header for the evp file</span>
+<span class="c1">#        nos_cols (list): Header for the nos file</span>
+<span class="c1">#    &quot;&quot;&quot;</span>
+<span class="c1">#    df = parse_evp(mkp(path, prefix + &#39;.evp&#39;))</span>
+<span class="c1">#    df1 = parse_cel(mkp(path, prefix + &#39;.cel&#39;))</span>
+<span class="c1">#    for col in df1.columns:</span>
+<span class="c1">#        df[col] = df1[col]</span>
+<span class="c1">#    df1 = parse_nos(mkp(path, prefix + &#39;.nos&#39;))</span>
+<span class="c1">#    for col in df1.columns:</span>
+<span class="c1">#        df[col] = df1[col]</span>
+<span class="c1">#    df[&#39;atom_count&#39;] = nat</span>
+<span class="c1">#    df[&#39;periodic&#39;] = True</span>
+<span class="c1">#    df.dropna(axis=0, how=&#39;any&#39;, inplace=True)</span>
+<span class="c1">#    factor = Time[&#39;ps&#39;, &#39;au&#39;]</span>
+<span class="c1">#    df[&#39;time&#39;] *= factor</span>
+<span class="c1">#    return Frame(df)</span>
+<span class="c1">###=======</span>
+<span class="c1">#### -*- coding: utf-8 -*-</span>
+<span class="c1">#### Copyright (c) 2015-2018, Exa Analytics Development Team</span>
+<span class="c1">#### Distributed under the terms of the Apache License 2.0</span>
+<span class="c1">###&quot;&quot;&quot;</span>
+<span class="c1">###QE cp.x Molecular Dynamics</span>
+<span class="c1">###################################</span>
+<span class="c1">###Functionality related to parsing inputs and outputs generated when running QE&#39;s</span>
+<span class="c1">###cp.x module.</span>
+<span class="c1">###&quot;&quot;&quot;</span>
+<span class="c1">###import os</span>
+<span class="c1">###from xml.etree import ElementTree</span>
+<span class="c1">###import numpy as np</span>
+<span class="c1">###import pandas as pd</span>
+<span class="c1">###from linecache import getline</span>
+<span class="c1">###from operator import itemgetter</span>
+<span class="c1">###from exa.util.utility import mkp</span>
+<span class="c1">###from exa.util.units import Time</span>
+<span class="c1">###from exa.math.misc.indexing import starts_count</span>
+<span class="c1">###from exatomic import Atom</span>
+<span class="c1">###from exatomic import Frame</span>
+<span class="c1">###from exatomic import Universe</span>
+<span class="c1">###from exatomic.qe.cp.error import CPException</span>
+<span class="c1">###</span>
+<span class="c1">###</span>
+<span class="c1">#### Default columns</span>
+<span class="c1">###evp_cols = (&#39;step&#39;, &#39;electronic_kinetic_energy&#39;, &#39;cell_temperature&#39;, &#39;atom_temperature&#39;,</span>
+<span class="c1">###            &#39;energy&#39;, &#39;enthalpy&#39;, &#39;conserved_energy&#39;, &#39;constant_of_motion&#39;, &#39;cell_volume&#39;,</span>
+<span class="c1">###            &#39;cell_pressure&#39;, &#39;time&#39;)</span>
+<span class="c1">###nos_cols = (&#39;step&#39;, &#39;nose_e1&#39;, &#39;nose_e2&#39;, &#39;nose_n1&#39;, &#39;nose_n2&#39;, &#39;time&#39;)</span>
+<span class="c1">###eig_cols = range(10)</span>
+<span class="c1">###</span>
+<span class="c1">###</span>
+<span class="c1">###def parse_dynamics_dir(path):</span>
+<span class="c1">###    &quot;&quot;&quot;</span>
+<span class="c1">###    Parse a molecular dynamics simulation given the &quot;outdir&quot;.</span>
+<span class="c1">###</span>
+<span class="c1">###    Args:</span>
+<span class="c1">###        path (str): Location of QE&#39;s output directory (&quot;outdir&quot;)</span>
+<span class="c1">###</span>
+<span class="c1">###    Returns:</span>
+<span class="c1">###        universe (:class:`~atomic.universe.Universe`): An atomic universe</span>
+<span class="c1">###    &quot;&quot;&quot;</span>
+<span class="c1">###    save_dirs = get_save_dirs(path)</span>
+<span class="c1">###    if len(save_dirs) == 0:</span>
+<span class="c1">###        raise CPException(&#39;No .save directory in path {}.&#39;.format(path))</span>
+<span class="c1">###    prefix = save_dirs[0].split(&#39;_&#39;)[0]</span>
+<span class="c1">###    data = parse_datafile(mkp(path, save_dirs[0]))</span>
+<span class="c1">###    symbols = data[&#39;symbols&#39;]</span>
+<span class="c1">###    nat = len(symbols)</span>
+<span class="c1">###    atom = create_atom(path, prefix, symbols)</span>
+<span class="c1">###    frame = create_frame(path, prefix, nat)</span>
+<span class="c1">###    meta = {&#39;path&#39;: path, &#39;prefix&#39;: prefix, &#39;program&#39;: &#39;qe&#39;}</span>
+<span class="c1">###    return Universe(name=prefix, description=path, atom=atom, frame=frame,</span>
+<span class="c1">###                    meta=meta)</span>
+<span class="c1">###</span>
+<span class="c1">###</span>
+<span class="c1">###def get_save_dirs(path):</span>
+<span class="c1">###    &quot;&quot;&quot;</span>
+<span class="c1">###    Find the save directories in a given path.</span>
+<span class="c1">###</span>
+<span class="c1">###    Args:</span>
+<span class="c1">###        path (str): Output directory path</span>
+<span class="c1">###</span>
+<span class="c1">###    Returns:</span>
+<span class="c1">###        dirs (list): List of save directories</span>
+<span class="c1">###    &quot;&quot;&quot;</span>
+<span class="c1">###    return [p for p in os.listdir(path) if os.path.isdir(mkp(path, p)) and &#39;save&#39; in p]</span>
+<span class="c1">###</span>
+<span class="c1">###</span>
+<span class="c1">###def parse_datafile(save_dir):</span>
+<span class="c1">###    &quot;&quot;&quot;</span>
+<span class="c1">###    Parses the standand data-file.xml output file from cp.x calculations.</span>
+<span class="c1">###</span>
+<span class="c1">###    Args:</span>
+<span class="c1">###        save_dir (str): Save directory path</span>
+<span class="c1">###</span>
+<span class="c1">###    Returns:</span>
+<span class="c1">###        d (dict): Dictionary of parsed data key, value pairs</span>
+<span class="c1">###    &quot;&quot;&quot;</span>
+<span class="c1">###    od = None</span>
+<span class="c1">###    xmlpath = mkp(save_dir, &quot;data-file.xml&quot;)</span>
+<span class="c1">###    ions = ElementTree(xmlpath).getroot().getchildren()[4]</span>
+<span class="c1">###    symbols = [atom.get(&quot;SPECIES&quot;) for atom in ions.getchildren() if &#39;ATOM.&#39; in str(atom)]</span>
+<span class="c1">###    order = dict(enumerate(set(symbols)))</span>
+<span class="c1">###    #ntype = len(set(symbols))</span>
+<span class="c1">###    #with open(mkp(save_dir, &#39;data-file.xml&#39;), &#39;rb&#39;) as f:</span>
+<span class="c1">###    #    od = xmltodict.parse(f)</span>
+<span class="c1">###    #symbols = [od[&#39;Root&#39;][&#39;IONS&#39;][sym][&#39;@SPECIES&#39;].strip() for sym in od[&#39;Root&#39;][&#39;IONS&#39;].keys() if &#39;ATOM.&#39; in sym ]</span>
+<span class="c1">###    #ntype = int(od[&#39;Root&#39;][&#39;IONS&#39;][&#39;NUMBER_OF_SPECIES&#39;][&#39;#text&#39;])</span>
+<span class="c1">###    #order = {}</span>
+<span class="c1">###    #for i, j in enumerate(range(1, ntype + 1)):</span>
+<span class="c1">###    #    order[od[&#39;Root&#39;][&#39;IONS&#39;][&#39;SPECIE.&#39; + str(j)][&#39;ATOM_TYPE&#39;][&#39;#text&#39;]] = i</span>
+<span class="c1">###    #symbols = [(sym, order[sym]) for sym in symbols]</span>
+<span class="c1">###    #symbols = [sym[0] for sym in sorted(symbols, key=itemgetter(1))]</span>
+<span class="c1">###    return {&#39;symbols&#39;: symbols, &#39;order&#39;: order};</span>
+<span class="c1">###</span>
+<span class="c1">###</span>
+<span class="c1">###def parse_ijk(path, columns, include_frame=False):</span>
+<span class="c1">###    &quot;&quot;&quot;</span>
+<span class="c1">###    Generic parser for pos, for, and vel files.</span>
+<span class="c1">###</span>
+<span class="c1">###    Args:</span>
+<span class="c1">###        path (str): File path</span>
+<span class="c1">###        columns (list): Header</span>
+<span class="c1">###        include_frame (bool): Include the frame index (default: false)</span>
+<span class="c1">###</span>
+<span class="c1">###    Returns:</span>
+<span class="c1">###        df (:pandas:`~pandas.DataFrame`): Atom-like dataframe</span>
+<span class="c1">###    &quot;&quot;&quot;</span>
+<span class="c1">###    fcol = columns[0]</span>
+<span class="c1">###    lcol = columns[-1]</span>
+<span class="c1">###    df = pd.read_csv(path, delim_whitespace=True, names=columns)</span>
+<span class="c1">###    step = df[df[lcol].isnull()]</span>
+<span class="c1">###    starts = step.drop_duplicates(fcol, keep=&#39;last&#39;).index.values + 1</span>
+<span class="c1">###    nframes = len(step)</span>
+<span class="c1">###    nat = np.min(starts[1:] - starts[:-1]) - 1</span>
+<span class="c1">###    frame, label, indices = starts_count(starts, nat)</span>
+<span class="c1">###    frame = pd.Series(frame, dtype=&#39;category&#39;)</span>
+<span class="c1">###    df = df[df.index.isin(indices)].reset_index(drop=True)</span>
+<span class="c1">###    if include_frame:</span>
+<span class="c1">###        df[&#39;frame&#39;] = frame</span>
+<span class="c1">###    return df</span>
+<span class="c1">###</span>
+<span class="c1">###</span>
+<span class="c1">###def parse_pos(*args, **kwargs):</span>
+<span class="c1">###    &quot;&quot;&quot;</span>
+<span class="c1">###    Parse the positions output file into a dataframe</span>
+<span class="c1">###    &quot;&quot;&quot;</span>
+<span class="c1">###    return parse_ijk(*args, columns=(&#39;x&#39;, &#39;y&#39;, &#39;z&#39;), **kwargs)</span>
+<span class="c1">###</span>
+<span class="c1">###def parse_vel(*args, **kwargs):</span>
+<span class="c1">###    &quot;&quot;&quot;</span>
+<span class="c1">###    Parse the positions output file into a dataframe</span>
+<span class="c1">###    &quot;&quot;&quot;</span>
+<span class="c1">###    return parse_ijk(*args, columns=(&#39;vx&#39;, &#39;vy&#39;, &#39;vz&#39;), **kwargs)</span>
+<span class="c1">###</span>
+<span class="c1">###</span>
+<span class="c1">###def parse_evp(path, columns=evp_cols):</span>
+<span class="c1">###    &quot;&quot;&quot;</span>
+<span class="c1">###    Parse in electronic, volume, and pressure data.</span>
+<span class="c1">###</span>
+<span class="c1">###    Args:</span>
+<span class="c1">###        columns (array-list): Array of string column names</span>
+<span class="c1">###</span>
+<span class="c1">###    Returns:</span>
+<span class="c1">###        evpdf (:class:`~pandas.DataFrame`): Pandas DataFrame containing evp file data</span>
+<span class="c1">###    &quot;&quot;&quot;</span>
+<span class="c1">###    header = getline(path, 1)</span>
+<span class="c1">###    skiprows = []</span>
+<span class="c1">###    if &#39;#&#39; in header:</span>
+<span class="c1">###        columns = header[1:].split()</span>
+<span class="c1">###        skiprows = [0]</span>
+<span class="c1">###    df = pd.read_csv(path, delim_whitespace=True, names=columns, skiprows=skiprows)</span>
+<span class="c1">###    df.drop_duplicates(df.columns[0], keep=&#39;last&#39;, inplace=True)</span>
+<span class="c1">###    df.dropna(how=&#39;all&#39;, axis=1, inplace=True)</span>
+<span class="c1">###    df.reset_index(drop=True, inplace=True)</span>
+<span class="c1">###    return df</span>
+<span class="c1">###</span>
+<span class="c1">###</span>
+<span class="c1">###def parse_nos(path, columns=nos_cols):</span>
+<span class="c1">###    &quot;&quot;&quot;</span>
+<span class="c1">###    Read in thermostat information.</span>
+<span class="c1">###    &quot;&quot;&quot;</span>
+<span class="c1">###    df = pd.read_csv(path, delim_whitespace=True, names=columns)</span>
+<span class="c1">###    df.drop_duplicates(df.columns[0], inplace=True, keep=&#39;last&#39;)</span>
+<span class="c1">###    df.reset_index(drop=True, inplace=True)</span>
+<span class="c1">###    return df</span>
+<span class="c1">###</span>
+<span class="c1">###</span>
+<span class="c1">###def parse_cel(path):</span>
+<span class="c1">###    &quot;&quot;&quot;</span>
+<span class="c1">###    Parse cell dimensions.</span>
+<span class="c1">###    &quot;&quot;&quot;</span>
+<span class="c1">###    df = pd.read_csv(path, delim_whitespace=True, names=(&#39;i&#39;, &#39;j&#39;, &#39;k&#39;))</span>
+<span class="c1">###    starts = df[::4].drop_duplicates(df.columns[0], keep=&#39;last&#39;).index.values + 1</span>
+<span class="c1">###    frame, label, indices = starts_count(starts, 3)</span>
+<span class="c1">###    df = df[df.index.isin(indices)].reset_index(drop=True)</span>
+<span class="c1">###    df[&#39;frame&#39;] = pd.Series(frame, dtype=&#39;category&#39;)</span>
+<span class="c1">###    df[&#39;label&#39;] = pd.Series(label, dtype=&#39;category&#39;)</span>
+<span class="c1">###    df = df.pivot(&#39;frame&#39;, &#39;label&#39;)</span>
+<span class="c1">###    df.columns = [&#39;xi&#39;, &#39;xj&#39;, &#39;xk&#39;, &#39;yi&#39;, &#39;yj&#39;, &#39;yk&#39;, &#39;zi&#39;, &#39;zj&#39;, &#39;zk&#39;]</span>
+<span class="c1">###    df[&#39;ox&#39;] = 0.0</span>
+<span class="c1">###    df[&#39;oy&#39;] = 0.0</span>
+<span class="c1">###    df[&#39;oz&#39;] = 0.0</span>
+<span class="c1">###    df.index.names = [None]</span>
+<span class="c1">###    return df</span>
+<span class="c1">###</span>
+<span class="c1">###</span>
+<span class="c1">###def create_atom(path, prefix, symbols):</span>
+<span class="c1">###    &quot;&quot;&quot;</span>
+<span class="c1">###    Create a :class:`~atomic.atom.Atom`.</span>
+<span class="c1">###    &quot;&quot;&quot;</span>
+<span class="c1">###    df1 = parse_pos(mkp(path, prefix + &#39;.pos&#39;), include_frame=True)</span>
+<span class="c1">###    df2 = parse_vel(mkp(path, prefix + &#39;.vel&#39;), include_frame=False)</span>
+<span class="c1">###    n = len(df1) // len(symbols)</span>
+<span class="c1">###    df1[&#39;symbol&#39;] = pd.Series(symbols * n, dtype=&#39;category&#39;)</span>
+<span class="c1">###    df1[&#39;vx&#39;] = df2[&#39;vx&#39;]</span>
+<span class="c1">###    df1[&#39;vy&#39;] = df2[&#39;vy&#39;]</span>
+<span class="c1">###    df1[&#39;vz&#39;] = df2[&#39;vz&#39;]</span>
+<span class="c1">###    df1.dropna(axis=0, how=&#39;any&#39;, inplace=True)</span>
+<span class="c1">###    return Atom(df1)</span>
+<span class="c1">###</span>
+<span class="c1">###</span>
+<span class="c1">###def create_frame(path, prefix, nat, evp_cols=evp_cols, nos_cols=nos_cols):</span>
+<span class="c1">###    &quot;&quot;&quot;</span>
+<span class="c1">###    Create a :class:`~atomic.frame.Frame` from dynamics data.</span>
+<span class="c1">###</span>
+<span class="c1">###    Args:</span>
+<span class="c1">###        path (str): Directory path</span>
+<span class="c1">###        prefix (str): Output file prefix</span>
+<span class="c1">###        nat (int): Number of atoms per frame</span>
+<span class="c1">###        evp_cols (list): Header for the evp file</span>
+<span class="c1">###        nos_cols (list): Header for the nos file</span>
+<span class="c1">###    &quot;&quot;&quot;</span>
+<span class="c1">###    df = parse_evp(mkp(path, prefix + &#39;.evp&#39;))</span>
+<span class="c1">###    df1 = parse_cel(mkp(path, prefix + &#39;.cel&#39;))</span>
+<span class="c1">###    for col in df1.columns:</span>
+<span class="c1">###        df[col] = df1[col]</span>
+<span class="c1">###    df1 = parse_nos(mkp(path, prefix + &#39;.nos&#39;))</span>
+<span class="c1">###    for col in df1.columns:</span>
+<span class="c1">###        df[col] = df1[col]</span>
+<span class="c1">###    df[&#39;atom_count&#39;] = nat</span>
+<span class="c1">###    df[&#39;periodic&#39;] = True</span>
+<span class="c1">###    df.dropna(axis=0, how=&#39;any&#39;, inplace=True)</span>
+<span class="c1">###    factor = Time[&#39;ps&#39;, &#39;au&#39;]</span>
+<span class="c1">###    df[&#39;time&#39;] *= factor</span>
+<span class="c1">###    return Frame(df)</span>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright .
+      Last updated on Apr 12, 2018.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../',
+            VERSION:'0.3.11',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          
+          SphinxRtdTheme.Navigation.enableSticky();
+          
+      });
+  </script> 
+
+</body>
+</html>

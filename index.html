@@ -1,0 +1,421 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Exatomic &mdash; exatomic 0.3.11 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Installation" href="install.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="#" class="icon icon-home"> exatomic
+          
+
+          
+            
+            <img src="_static/logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.3.11
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install.html#anaconda">Anaconda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install.html#pypi">Pypi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install.html#repository">Repository</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install.html#what-s-next">What’s Next?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install.html#note">Note</a></li>
+<li class="toctree-l1"><a class="reference internal" href="started.html">Getting Started</a></li>
+</ul>
+<p class="caption"><span class="caption-text">General</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="api/index.html">User Docs</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Examples</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/water-demo.html">Import</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/water-demo.html#Parse-Test-Data">Parse Test Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/water-demo.html#Construct-a-Periodic-Universe-(by-hand)">Construct a Periodic Universe (by hand)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/water-demo.html#Compute-Distances-Between-Atoms">Compute Distances Between Atoms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/water-demo.html#Visualize-Trajectory-(press-play-multiple-times-to-speed-up-framerate)">Visualize Trajectory (press play multiple times to speed up framerate)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/nwchem.html">NWChem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/qe.html">Support for Quantum ESPRESSO in exatomic</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Software</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="software/adf.html">ADF</a></li>
+<li class="toctree-l1"><a class="reference internal" href="software/gaussian.html">Gaussian</a></li>
+<li class="toctree-l1"><a class="reference internal" href="software/molcas.html">Molcas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="software/nbo.html">NBO</a></li>
+<li class="toctree-l1"><a class="reference internal" href="software/nwchem.html">NWChem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="software/qe.html">Quantum ESPRESSO</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contributors</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="contrib.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="concepts.html">Development</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">exatomic</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="#">Docs</a> &raquo;</li>
+        
+      <li>Exatomic</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast,
+.nboutput.nblast {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast + .nbinput {
+    margin-top: -19px;
+}
+
+/* nice headers on first paragraph of info/warning boxes */
+.admonition .first {
+    margin: -12px;
+    padding: 6px 12px;
+    margin-bottom: 12px;
+    color: #fff;
+    line-height: 1;
+    display: block;
+}
+.admonition.warning .first {
+    background: #f0b37e;
+}
+.admonition.note .first {
+    background: #6ab0de;
+}
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+</style>
+<div class="section" id="exatomic">
+<h1><a class="reference external" href="https://exa-analytics.github.io/">Exatomic</a><a class="headerlink" href="#exatomic" title="Permalink to this headline">¶</a></h1>
+<p><em>A unified platform for theoretical and computational chemists</em></p>
+<p>This package provides a platform for computational and theoretical chemists
+and physicists to parse, process, analyze, and visualize data coming from
+quantum mechanics calculations. Included in this package are sub-packages
+dedicated to parsing data from software programs used in the field. A quick
+method to get started with visualization is through the <a class="reference external" href="https://jupyter.org">Jupyter notebook</a>.</p>
+<div class="toctree-wrapper compound">
+<p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install.html#anaconda">Anaconda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install.html#pypi">Pypi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install.html#repository">Repository</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install.html#what-s-next">What’s Next?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install.html#note">Note</a></li>
+<li class="toctree-l1"><a class="reference internal" href="started.html">Getting Started</a></li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption"><span class="caption-text">General</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="api/index.html">User Docs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api/index.html#supported-software">Supported Software</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/index.html#version-information">Version Information</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/universe.html">Universe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/editor.html">Editors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/widgets.html">Visualization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/interfaces.html">External Interfaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/atom.html">Description of Nuclear Coordinates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/two.html">Atom Two</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/orbital.html">Orbitals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/basis.html">Description of Basis Sets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/tensor.html">Tensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/frame.html">Frame</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/molecule.html">Molecules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/field.html">Scalar Fields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/matrices.html">Matrices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/algorithms/basis.html">Basis Algorithms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/algorithms/orbital.html">Orbital Algorithms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/algorithms/integrals.html">Common Orbital Integrals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/algorithms/structural.html">Structural Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/algorithms/builders.html">Molecular and System Builders</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/algorithms/delocalization.html">Exchange-Correlation Delocalization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/algorithms/interpolation.html">Interpolation Helpers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/algorithms/neighbors.html">Clustering Algorithms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/error.html">Core Exceptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/algorithms/indexing.html">Indexing Algorithms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/tests/base_tests.html">Base Tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/tests/core_tests.html">Core Tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/tests/algorithms_tests.html">Algorithms Tests</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption"><span class="caption-text">Examples</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/water-demo.html">Import</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/water-demo.html#Parse-Test-Data">Parse Test Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/water-demo.html#Construct-a-Periodic-Universe-(by-hand)">Construct a Periodic Universe (by hand)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/water-demo.html#Compute-Distances-Between-Atoms">Compute Distances Between Atoms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/water-demo.html#Visualize-Trajectory-(press-play-multiple-times-to-speed-up-framerate)">Visualize Trajectory (press play multiple times to speed up framerate)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/nwchem.html">NWChem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/qe.html">Support for Quantum ESPRESSO in exatomic</a></li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption"><span class="caption-text">Software</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="software/adf.html">ADF</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="software/adf.html#base-adf-editor">Base ADF editor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="software/adf.html#input-generator-and-parser">Input Generator and Parser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="software/adf.html#adf-composite-output">ADF Composite Output</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="software/gaussian.html">Gaussian</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="software/gaussian.html#gaussian-editor">Gaussian Editor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="software/gaussian.html#gaussian-input-generator">Gaussian Input Generator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="software/gaussian.html#gaussian-output-editor">Gaussian Output Editor</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="software/molcas.html">Molcas</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="software/molcas.html#base-molcas-editor">Base Molcas Editor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="software/molcas.html#input-generator-and-parser">Input Generator and Parser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="software/molcas.html#molcas-output-parser">Molcas Output Parser</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="software/nbo.html">NBO</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="software/nbo.html#gaussian-editor">Gaussian Editor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="software/nbo.html#exnbo-input-generator-and-parser">exnbo Input Generator and Parser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="software/nbo.html#exnbo-output-editor">exnbo Output Editor</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="software/nwchem.html">NWChem</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="software/nwchem.html#basis-set-support">Basis Set Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="software/nwchem.html#nwchem-editor">NWChem Editor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="software/nwchem.html#input-generator-and-parser">Input Generator and Parser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="software/nwchem.html#nwchem-output">NWChem Output</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="software/qe.html">Quantum ESPRESSO</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="software/qe.html#qe-cp-x-molecular-dynamics">QE cp.x Molecular Dynamics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="software/qe.html#base-output-parser">Base Output Parser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="software/qe.html#atomic-positions-parser">Atomic Positions Parser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="software/qe.html#qe-type-conversions">QE Type Conversions</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption"><span class="caption-text">Contributors</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="contrib.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="concepts.html">Development</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="info">
+<h1>Info<a class="headerlink" href="#info" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference download internal" href="_downloads/LICENSE" download=""><code class="xref download docutils literal notranslate"><span class="pre">License</span></code></a></p>
+<ul class="simple">
+<li><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></li>
+<li><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></li>
+<li><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></li>
+</ul>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="install.html" class="btn btn-neutral float-right" title="Installation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright .
+      Last updated on Apr 12, 2018.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.3.11',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          
+          SphinxRtdTheme.Navigation.enableSticky();
+          
+      });
+  </script> 
+
+</body>
+</html>
